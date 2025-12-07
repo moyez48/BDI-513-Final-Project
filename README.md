@@ -1,5 +1,7 @@
 # Data Center Energy Usage Analysis: AI/ML Impact Study
 
+**Author:** Majesty Umoye
+
 ## 📊 Project Overview
 
 This project analyzes PG&E electric usage data for ZIP code 95113 (San Jose, CA) from 2016-2025, revealing the dramatic energy consumption patterns of a data center during the AI/ML boom era. Through advanced **load masking detection and correction**, this analysis exposes the true scale of energy demands that were previously hidden in neighboring ZIP codes.
