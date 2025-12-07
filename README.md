@@ -47,12 +47,27 @@ Final Project/
 - **Customer Classes**: Commercial, Residential, and Industrial
 - **Time Period**: July 2016 - September 2025 (111 months)
 
+### Understanding Load Masking (PG&E Aggregation Policy)
+
+**Why Load Masking Occurs:**
+
+According to California Public Utilities Commission Decision 14-05-016, PG&E's public datasets must meet specific aggregation rules to protect customer privacy:
+
+- **Residential**: Minimum of 100 customers required
+- **Non-Residential**: Minimum of 15 customers, with no single customer accounting for more than 15% of total consumption
+
+**Critical Implication**: If these aggregation requirements are **not met** in a ZIP code, the consumption data is **combined with a neighboring ZIP code** until the requirements are satisfied.
+
+This means that large energy consumers (like data centers) can have their usage reported under neighboring ZIP codes, making the true energy footprint invisible in standard analysis. This is exactly what our load masking detection algorithm corrects.
+
 ### Load Masking Detection Algorithm
 1. **Baseline Calculation**: Compute median usage for each ZIP code
 2. **Suspicious Period Detection**: Flag months where ZIP 95113 usage < 50% of baseline
 3. **Neighbor Analysis**: Check neighboring ZIPs for abnormal usage (>50% above their baseline)
 4. **Reallocation**: Transfer excess energy from neighbor back to ZIP 95113
 5. **Documentation**: Log all reallocations with before/after values
+
+This algorithm effectively reverses PG&E's privacy-mandated aggregation to reveal the true scale of data center operations.
 
 ### Statistical Analysis
 - Month-over-month percentage changes
@@ -160,6 +175,21 @@ PG&E Electric Usage by ZIP Code (2015-2025)
 - Monthly aggregated data
 - Cleaned and validated for analysis
 
+### Data Disclaimer
+
+Customer usage data is reported by ZIP code, by month, by year, and by customer type (residential, commercial, agricultural, industrial). These reports are made available pursuant to **California Public Utilities Commission Decision 14-05-016**.
+
+**Aggregation Rules:**
+- Reports meet Commission Decision rules for public aggregation of data
+- Minimum of 100 Residential customers required
+- Minimum of 15 Non-Residential customers required
+- No single Non-Residential customer can account for more than 15% of total consumption
+- **If aggregation is not met, consumption is combined with a neighboring ZIP code** until requirements are satisfied
+
+**Important**: Recipients of the usage data are solely responsible for any use of the data. PG&E disclaims all warranties and representations regarding the reports and data, including accuracy or fitness for any particular purpose.
+
+Reports are published quarterly in machine-readable format (CSV files) and contain 3 months of usage data through the end of the calendar quarter. Usage for Net Energy Metered customers is reported at their aggregate, monthly net values.
+
 ---
 
-**Note**: This analysis demonstrates the critical importance of load masking detection in energy usage studies. The corrected data reveals energy consumption patterns that would otherwise remain hidden, providing essential insights for energy policy, grid planning, and sustainability initiatives in the AI era.
+**Note**: This analysis demonstrates the critical importance of load masking detection in energy usage studies. The corrected data reveals energy consumption patterns that would otherwise remain hidden due to PG&E's privacy-mandated aggregation policy, providing essential insights for energy policy, grid planning, and sustainability initiatives in the AI era.
