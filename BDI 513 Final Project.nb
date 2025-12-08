@@ -1,0 +1,2178 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[    106361,       2177]
+NotebookOptionsPosition[    105048,       2146]
+NotebookOutlinePosition[    105440,       2162]
+CellTagsIndexPosition[    105397,       2159]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"set", " ", "working", " ", "dictionary"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+  "SetDirectory", 
+   "[", "\"\</Users/liuyoulan/Desktop/BDI 513/BDI 513 final project\>\"", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.974210547803*^9, 3.974210558303006*^9}, {
+  3.974210866504521*^9, 3.9742108795186872`*^9}},
+ CellLabel->
+  "In[218]:=",ExpressionUUID->"c84fcfc6-9b45-4b97-b7ad-9c79250bf6c1"],
+
+Cell[BoxData["\<\"/Users/liuyoulan/Desktop/BDI 513/BDI 513 final \
+project\"\>"], "Output",
+ CellChangeTimes->{3.974210558980564*^9, 3.974214802280732*^9},
+ CellLabel->
+  "Out[218]=",ExpressionUUID->"47cd1415-8d60-4f7a-b84c-f5270081b869"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"read", " ", "csv", " ", "as", " ", "dataset"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Data", "=", 
+    RowBox[{"Import", "[", 
+     RowBox[{"\"\<pge_electric_usage_2015_2025_cleaned.csv\>\"", 
+      ",", "\"\<Dataset\>\""}], "]"}]}], "\[IndentingNewLine]", 
+   TagBox[
+    TagBox[
+     DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
+      "InitialData" -> {<|
+         "ZIPCODE" -> 93203, "MONTH" -> 7, "CUSTOMERCLASS" -> 
+          "Elec- Agricultural", "COMBINED" -> "Y", "TOTALCUSTOMERS" -> 152., 
+          "TOTALKWH" -> 1.4609011*^7, "AVERAGEKWH" -> 96112., "YEAR" -> 2016, 
+          "QUARTER" -> 3, "YEAR_QUARTER" -> "2016 Q3", "MONTH_NAME" -> "Jul", 
+          "DATE_STR" -> "Jul 2016"|>, <|
+         "ZIPCODE" -> 93203, "MONTH" -> 8, "CUSTOMERCLASS" -> 
+          "Elec- Agricultural", "COMBINED" -> "Y", "TOTALCUSTOMERS" -> 153., 
+          "TOTALKWH" -> 1.4570779*^7, "AVERAGEKWH" -> 95234., "YEAR" -> 2016, 
+          "QUARTER" -> 3, "YEAR_QUARTER" -> "2016 Q3", "MONTH_NAME" -> "Aug", 
+          "DATE_STR" -> "Aug 2016"|>, <|
+         "ZIPCODE" -> 93203, "MONTH" -> 9, "CUSTOMERCLASS" -> 
+          "Elec- Agricultural", "COMBINED" -> "Y", "TOTALCUSTOMERS" -> 155., 
+          "TOTALKWH" -> 1.1688866*^7, "AVERAGEKWH" -> 75412., "YEAR" -> 2016, 
+          "QUARTER" -> 3, "YEAR_QUARTER" -> "2016 Q3", "MONTH_NAME" -> "Sep", 
+          "DATE_STR" -> "Sep 2016"|>, <|
+         "ZIPCODE" -> 93204, "MONTH" -> 7, "CUSTOMERCLASS" -> 
+          "Elec- Agricultural", "COMBINED" -> "Y", "TOTALCUSTOMERS" -> 0., 
+          "TOTALKWH" -> 0., "AVERAGEKWH" -> Missing["NotAvailable"], "YEAR" -> 
+          2016, "QUARTER" -> 3, "YEAR_QUARTER" -> "2016 Q3", "MONTH_NAME" -> 
+          "Jul", "DATE_STR" -> "Jul 2016"|>, <|
+         "ZIPCODE" -> 93204, "MONTH" -> 8, "CUSTOMERCLASS" -> 
+          "Elec- Agricultural", "COMBINED" -> "Y", "TOTALCUSTOMERS" -> 0., 
+          "TOTALKWH" -> 0., "AVERAGEKWH" -> Missing["NotAvailable"], "YEAR" -> 
+          2016, "QUARTER" -> 3, "YEAR_QUARTER" -> "2016 Q3", "MONTH_NAME" -> 
+          "Aug", "DATE_STR" -> "Aug 2016"|>}, "AllowEmbedding" -> True, 
+       "InitialShape" -> 
+       TypeSystem`PackageScope`HeaderShape[<|{All, "ZIPCODE"} -> 
+          1, {All, "MONTH"} -> 1, {All, "CUSTOMERCLASS"} -> 
+          1, {All, "COMBINED"} -> 1, {All, "TOTALCUSTOMERS"} -> 
+          1, {All, "TOTALKWH"} -> 1, {All, "AVERAGEKWH"} -> 1, {All, "YEAR"} -> 
+          1, {All, "QUARTER"} -> 1, {All, "YEAR_QUARTER"} -> 
+          1, {All, "MONTH_NAME"} -> 1, {All, "DATE_STR"} -> 1|>, 
+         TypeSystem`PackageScope`Limited[
+          TypeSystem`PackageScope`ColumnShape[
+           TypeSystem`PackageScope`Limited[
+            
+            TypeSystem`PackageScope`RowShape[<|
+             "ZIPCODE" -> TypeSystem`PackageScope`AtomShape[34], "MONTH" -> 
+              TypeSystem`PackageScope`AtomShape[34], "CUSTOMERCLASS" -> 
+              TypeSystem`PackageScope`AtomShape[189.], "COMBINED" -> 
+              TypeSystem`PackageScope`AtomShape[31.5], "TOTALCUSTOMERS" -> 
+              TypeSystem`PackageScope`AtomShape[60], "TOTALKWH" -> 
+              TypeSystem`PackageScope`AtomShape[60], "AVERAGEKWH" -> 
+              TypeSystem`PackageScope`AtomShape[60], "YEAR" -> 
+              TypeSystem`PackageScope`AtomShape[34], "QUARTER" -> 
+              TypeSystem`PackageScope`AtomShape[34], "YEAR_QUARTER" -> 
+              TypeSystem`PackageScope`AtomShape[73.5], "MONTH_NAME" -> 
+              TypeSystem`PackageScope`AtomShape[31.5], "DATE_STR" -> 
+              TypeSystem`PackageScope`AtomShape[84.]|>], 
+            DirectedInfinity[1], 10, {All}]], 5, 
+          DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
+         TypeSystem`Struct[{
+          "ZIPCODE", "MONTH", "CUSTOMERCLASS", "COMBINED", "TOTALCUSTOMERS", 
+           "TOTALKWH", "AVERAGEKWH", "YEAR", "QUARTER", "YEAR_QUARTER", 
+           "MONTH_NAME", "DATE_STR"}, {
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[
+            TypeSystem`Enumeration["Elec- Agricultural"]], 
+           TypeSystem`Atom[
+            TypeSystem`Enumeration["Y"]], 
+           TypeSystem`Atom[Real], 
+           TypeSystem`Atom[Real], 
+           TypeSystem`Atom[Real], 
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[
+            TypeSystem`Enumeration["2016 Q3"]], 
+           TypeSystem`Atom[
+            TypeSystem`Enumeration["Aug", "Jul", "Sep"]], 
+           TypeSystem`Atom[
+            TypeSystem`Enumeration["Aug 2016", "Jul 2016", "Sep 2016"]]}], 5],
+        "Meta" -> <||>, "RowTarget" -> 20, "ColumnTarget" -> 10, "Shape" -> 
+       TypeSystem`PackageScope`HeaderShape[<|{All, "ZIPCODE"} -> 
+          1, {All, "MONTH"} -> 1, {All, "CUSTOMERCLASS"} -> 
+          1, {All, "COMBINED"} -> 1, {All, "TOTALCUSTOMERS"} -> 
+          1, {All, "TOTALKWH"} -> 1, {All, "AVERAGEKWH"} -> 1, {All, "YEAR"} -> 
+          1, {All, "QUARTER"} -> 1, {All, "YEAR_QUARTER"} -> 
+          1, {All, "MONTH_NAME"} -> 1, {All, "DATE_STR"} -> 1|>, 
+         TypeSystem`PackageScope`Limited[
+          TypeSystem`PackageScope`ColumnShape[
+           TypeSystem`PackageScope`Limited[
+            
+            TypeSystem`PackageScope`RowShape[<|
+             "ZIPCODE" -> TypeSystem`PackageScope`AtomShape[34], "MONTH" -> 
+              TypeSystem`PackageScope`AtomShape[34], "CUSTOMERCLASS" -> 
+              TypeSystem`PackageScope`AtomShape[189.], "COMBINED" -> 
+              TypeSystem`PackageScope`AtomShape[31.5], "TOTALCUSTOMERS" -> 
+              TypeSystem`PackageScope`AtomShape[60], "TOTALKWH" -> 
+              TypeSystem`PackageScope`AtomShape[60], "AVERAGEKWH" -> 
+              TypeSystem`PackageScope`AtomShape[60], "YEAR" -> 
+              TypeSystem`PackageScope`AtomShape[34], "QUARTER" -> 
+              TypeSystem`PackageScope`AtomShape[34], "YEAR_QUARTER" -> 
+              TypeSystem`PackageScope`AtomShape[73.5], "MONTH_NAME" -> 
+              TypeSystem`PackageScope`AtomShape[31.5], "DATE_STR" -> 
+              TypeSystem`PackageScope`AtomShape[84.]|>], 
+            DirectedInfinity[1], 10, {All}]], 5, 
+          DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
+         TypeSystem`Struct[{
+          "ZIPCODE", "MONTH", "CUSTOMERCLASS", "COMBINED", "TOTALCUSTOMERS", 
+           "TOTALKWH", "AVERAGEKWH", "YEAR", "QUARTER", "YEAR_QUARTER", 
+           "MONTH_NAME", "DATE_STR"}, {
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[
+            TypeSystem`Enumeration["Elec- Agricultural"]], 
+           TypeSystem`Atom[
+            TypeSystem`Enumeration["Y"]], 
+           TypeSystem`Atom[Real], 
+           TypeSystem`Atom[Real], 
+           TypeSystem`Atom[Real], 
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[
+            TypeSystem`Enumeration["2016 Q3"]], 
+           TypeSystem`Atom[
+            TypeSystem`Enumeration["Aug", "Jul", "Sep"]], 
+           TypeSystem`Atom[
+            TypeSystem`Enumeration["Aug 2016", "Jul 2016", "Sep 2016"]]}], 5],
+        "Path" -> {}, "DisplayedRowCount" -> 5, "DisplayedColumnCount" -> 10, 
+       "DataRowCount" -> 5, "DataColumnCount" -> 12, "SortPaths" -> {}, 
+       "SortDirections" -> {}, "HiddenItemsMap" -> Null, "UpdateType" -> 1|>, 
+      TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+      TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+      TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
+      TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+      TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+      DynamicModule[{
+       TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+          Style[
+           Grid[{{
+              Item[
+               Pane[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover["ZIPCODE", 
+                    Style[
+                    "ZIPCODE", FontColor -> 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"]][{All, "ZIPCODE"},
+                     1]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{All, "ZIPCODE"}, 
+                  "ColumnHeader", True], "Mouse"], 
+                ImageSize -> {{1, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+               RGBColor[
+                0.9500473017990948, 0.9500473017990948, 0.9500473017990948], 
+               Alignment -> {Left, Baseline}], 
+              Item[
+               Pane[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover["MONTH", 
+                    Style[
+                    "MONTH", FontColor -> 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"]][{All, "MONTH"}, 
+                    1]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{All, "MONTH"}, 
+                  "ColumnHeader", True], "Mouse"], 
+                ImageSize -> {{1, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+               RGBColor[
+                0.9500473017990948, 0.9500473017990948, 0.9500473017990948], 
+               Alignment -> {Left, Baseline}], 
+              Item[
+               Pane[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover["CUSTOMERCLASS", 
+                    Style[
+                    "CUSTOMERCLASS", FontColor -> 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"]][{
+                    All, "CUSTOMERCLASS"}, 1]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{
+                  All, "CUSTOMERCLASS"}, "ColumnHeader", True], "Mouse"], 
+                ImageSize -> {{1, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+               RGBColor[
+                0.9500473017990948, 0.9500473017990948, 0.9500473017990948], 
+               Alignment -> {Left, Baseline}], 
+              Item[
+               Pane[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover["COMBINED", 
+                    Style[
+                    "COMBINED", FontColor -> 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"]][{
+                    All, "COMBINED"}, 1]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{All, "COMBINED"}, 
+                  "ColumnHeader", True], "Mouse"], 
+                ImageSize -> {{1, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+               RGBColor[
+                0.9500473017990948, 0.9500473017990948, 0.9500473017990948], 
+               Alignment -> {Left, Baseline}], 
+              Item[
+               Pane[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover["TOTALCUSTOMERS", 
+                    Style[
+                    "TOTALCUSTOMERS", FontColor -> 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"]][{
+                    All, "TOTALCUSTOMERS"}, 1]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{
+                  All, "TOTALCUSTOMERS"}, "ColumnHeader", True], "Mouse"], 
+                ImageSize -> {{1, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+               RGBColor[
+                0.9500473017990948, 0.9500473017990948, 0.9500473017990948], 
+               Alignment -> {Left, Baseline}], 
+              Item[
+               Pane[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover["TOTALKWH", 
+                    Style[
+                    "TOTALKWH", FontColor -> 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"]][{
+                    All, "TOTALKWH"}, 1]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{All, "TOTALKWH"}, 
+                  "ColumnHeader", True], "Mouse"], 
+                ImageSize -> {{1, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+               RGBColor[
+                0.9500473017990948, 0.9500473017990948, 0.9500473017990948], 
+               Alignment -> {Left, Baseline}], 
+              Item[
+               Pane[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover["AVERAGEKWH", 
+                    Style[
+                    "AVERAGEKWH", FontColor -> 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"]][{
+                    All, "AVERAGEKWH"}, 1]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{All, "AVERAGEKWH"}, 
+                  "ColumnHeader", True], "Mouse"], 
+                ImageSize -> {{1, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+               RGBColor[
+                0.9500473017990948, 0.9500473017990948, 0.9500473017990948], 
+               Alignment -> {Left, Baseline}], 
+              Item[
+               Pane[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover["YEAR", 
+                    Style[
+                    "YEAR", FontColor -> 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"]][{All, "YEAR"}, 
+                    1]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{All, "YEAR"}, 
+                  "ColumnHeader", True], "Mouse"], 
+                ImageSize -> {{1, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+               RGBColor[
+                0.9500473017990948, 0.9500473017990948, 0.9500473017990948], 
+               Alignment -> {Left, Baseline}], 
+              Item[
+               Pane[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover["QUARTER", 
+                    Style[
+                    "QUARTER", FontColor -> 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"]][{All, "QUARTER"},
+                     1]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{All, "QUARTER"}, 
+                  "ColumnHeader", True], "Mouse"], 
+                ImageSize -> {{1, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+               RGBColor[
+                0.9500473017990948, 0.9500473017990948, 0.9500473017990948], 
+               Alignment -> {Left, Baseline}], 
+              Item[
+               Pane[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover["YEAR_QUARTER", 
+                    Style[
+                    "YEAR_QUARTER", FontColor -> 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"]][{
+                    All, "YEAR_QUARTER"}, 1]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{
+                  All, "YEAR_QUARTER"}, "ColumnHeader", True], "Mouse"], 
+                ImageSize -> {{1, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+               RGBColor[
+                0.9500473017990948, 0.9500473017990948, 0.9500473017990948], 
+               Alignment -> {Left, Baseline}]}, {
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["93203"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{1, 
+                   Key["ZIPCODE"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["7"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{1, 
+                   Key["MONTH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["Elec- Agricultural", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{1, 
+                   Key["CUSTOMERCLASS"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{189., Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["Y", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{1, 
+                   Key["COMBINED"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{31.5, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["152.0"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{1, 
+                   Key["TOTALCUSTOMERS"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["14609011."], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{1, 
+                   Key["TOTALKWH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["96112.0"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{1, 
+                   Key["AVERAGEKWH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["2016"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{1, 
+                   Key["YEAR"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["3"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{1, 
+                   Key["QUARTER"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["2016 Q3", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{1, 
+                   Key["YEAR_QUARTER"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{73.5, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}]}, {
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["93203"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{2, 
+                   Key["ZIPCODE"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["8"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{2, 
+                   Key["MONTH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["Elec- Agricultural", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{2, 
+                   Key["CUSTOMERCLASS"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{189., Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["Y", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{2, 
+                   Key["COMBINED"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{31.5, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["153.0"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{2, 
+                   Key["TOTALCUSTOMERS"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["14570779."], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{2, 
+                   Key["TOTALKWH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["95234.0"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{2, 
+                   Key["AVERAGEKWH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["2016"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{2, 
+                   Key["YEAR"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["3"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{2, 
+                   Key["QUARTER"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["2016 Q3", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{2, 
+                   Key["YEAR_QUARTER"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{73.5, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}]}, {
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["93203"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{3, 
+                   Key["ZIPCODE"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["9"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{3, 
+                   Key["MONTH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["Elec- Agricultural", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{3, 
+                   Key["CUSTOMERCLASS"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{189., Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["Y", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{3, 
+                   Key["COMBINED"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{31.5, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["155.0"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{3, 
+                   Key["TOTALCUSTOMERS"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["11688866."], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{3, 
+                   Key["TOTALKWH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["75412.0"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{3, 
+                   Key["AVERAGEKWH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["2016"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{3, 
+                   Key["YEAR"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["3"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{3, 
+                   Key["QUARTER"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["2016 Q3", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{3, 
+                   Key["YEAR_QUARTER"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{73.5, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}]}, {
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["93204"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{4, 
+                   Key["ZIPCODE"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["7"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{4, 
+                   Key["MONTH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["Elec- Agricultural", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{4, 
+                   Key["CUSTOMERCLASS"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{189., Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["Y", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{4, 
+                   Key["COMBINED"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{31.5, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["0.0"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{4, 
+                   Key["TOTALCUSTOMERS"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["0.0"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{4, 
+                   Key["TOTALKWH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 Style["\[LongDash]", 
+                  RGBColor[
+                  0.750103759318626, 0.750103759318626, 0.750103759318626]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{4, 
+                   Key["AVERAGEKWH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["2016"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{4, 
+                   Key["YEAR"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["3"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{4, 
+                   Key["QUARTER"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["2016 Q3", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{4, 
+                   Key["YEAR_QUARTER"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{73.5, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}]}, {
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["93204"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{5, 
+                   Key["ZIPCODE"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["8"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{5, 
+                   Key["MONTH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["Elec- Agricultural", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{5, 
+                   Key["CUSTOMERCLASS"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{189., Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["Y", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{5, 
+                   Key["COMBINED"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{31.5, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["0.0"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{5, 
+                   Key["TOTALCUSTOMERS"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["0.0"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{5, 
+                   Key["TOTALKWH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 Style["\[LongDash]", 
+                  RGBColor[
+                  0.750103759318626, 0.750103759318626, 0.750103759318626]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{5, 
+                   Key["AVERAGEKWH"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{60, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["2016"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{5, 
+                   Key["YEAR"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation[
+                 RawBoxes["3"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{5, 
+                   Key["QUARTER"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}], 
+              Item[
+               Pane[
+                Annotation["2016 Q3", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                 "f9bda547-d174-4afe-a70f-285804fe35ef"][{5, 
+                   Key["YEAR_QUARTER"]}, "Item", False], "Mouse"], 
+                ImageSize -> {{73.5, Full}, Automatic}, 
+                ImageMargins -> {{5, 3}, {4, 5}}], 
+               ItemSize -> {Full, Automatic}]}, {
+              Item[
+               Deploy[
+                Pane[
+                 Row[{
+                   Spacer[2], 
+                   Style[
+                    Row[{
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{2, 0}, {16, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 90 Degree, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35], BaseStyle -> 
+                    RGBColor[
+                    0.5400253298879029, 0.5400253298879029, 
+                    0.5400253298879029]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]], 
+                    FaceForm[None], 
+                    Rectangle[{2, 0}, {16, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 0.791992189065661], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 90 Degree, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$hPos$$ + (-10) 
+                    If[True, 12, 1], {1, 12 - -10 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$]], 
+                    Appearance -> None], 
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{2, 0}, {16, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 90 Degree, {9,
+                     9}]}, ImageSize -> (1 -> 1), 
+                    ImagePadding -> {{0, 1}, {1, 0}}, BaselinePosition -> 
+                    Scaled[0.35], BaseStyle -> 
+                    RGBColor[
+                    0.5400253298879029, 0.5400253298879029, 
+                    0.5400253298879029]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]], 
+                    FaceForm[None], 
+                    Rectangle[{2, 0}, {16, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 0.791992189065661], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 90 Degree, {9,
+                     9}]}, ImageSize -> (1 -> 1), 
+                    ImagePadding -> {{0, 1}, {1, 0}}, BaselinePosition -> 
+                    Scaled[0.35]]], "LinkHand"], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$hPos$$ + (-10) 
+                    If[False, 12, 1], {1, 12 - -10 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$]], 
+                    Appearance -> None], " ", 
+                    Style[
+                    Mouseover[
+                    Style[
+                    Row[{"columns ", 1, "\[Dash]", 10, " of ", 
+                    Style[12, FontWeight -> Bold]}], FontSize -> 
+                    9.333333333333332, FontColor -> 
+                    RGBColor[
+                    0.5001083377004029, 0.5001083377004029, 
+                    0.5001083377004029]], 
+                    Style[
+                    Row[{"columns ", 1, "\[Dash]", 10, " of ", 
+                    Style[12, FontWeight -> Bold]}], FontSize -> 
+                    9.333333333333332, FontColor -> 
+                    RGBColor[
+                    0.5001083377004029, 0.5001083377004029, 
+                    0.5001083377004029]]], ContextMenu -> {
+                    MenuItem["Hide", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"}, "Columns", 
+                    1, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show up to 2 Columns", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"}, "Columns", 
+                    2, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show up to 5 Columns", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"}, "Columns", 
+                    5, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show up to 10 Columns", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"}, "Columns", 
+                    10, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show All", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"}, "Columns", 
+                    100000000, {}]], MenuEvaluator -> Automatic]}], " ", 
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{2, 0}, {16, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], (-90) 
+                    Degree, {9, 9}]}, ImageSize -> (1 -> 1), 
+                    ImagePadding -> {{0, 1}, {1, 0}}, BaselinePosition -> 
+                    Scaled[0.35], BaseStyle -> 
+                    RGBColor[
+                    0.5400253298879029, 0.5400253298879029, 
+                    0.5400253298879029]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]], 
+                    FaceForm[None], 
+                    Rectangle[{2, 0}, {16, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 0.791992189065661], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], (-90) 
+                    Degree, {9, 9}]}, ImageSize -> (1 -> 1), 
+                    ImagePadding -> {{0, 1}, {1, 0}}, BaselinePosition -> 
+                    Scaled[0.35]]], "LinkHand"], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$hPos$$ + 
+                    10 If[False, 12, 1], {1, 12 - 10 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$]], 
+                    Appearance -> None], 
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{2, 0}, {16, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], (-90) Degree, {9, 
+                    9}]}, ImageSize -> (1 -> 1), 
+                    ImagePadding -> {{0, 1}, {1, 0}}, BaselinePosition -> 
+                    Scaled[0.35], BaseStyle -> 
+                    RGBColor[
+                    0.5400253298879029, 0.5400253298879029, 
+                    0.5400253298879029]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 
+                    0.791992189065661]], 
+                    FaceForm[None], 
+                    Rectangle[{2, 0}, {16, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.2749633796890805, 0.536987306253161, 0.791992189065661], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], (-90) Degree, {9, 
+                    9}]}, ImageSize -> (1 -> 1), 
+                    ImagePadding -> {{0, 1}, {1, 0}}, BaselinePosition -> 
+                    Scaled[0.35]]], "LinkHand"], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$hPos$$ + 
+                    10 If[True, 12, 1], {1, 12 - 10 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$]], 
+                    Appearance -> None]}], ContextMenu -> {}]}], 
+                 ImageMargins -> {{0, -1}, {-1, 1}}]], Background -> 
+               RGBColor[
+                0.9800735476613404, 0.9800735476613404, 0.9800735476613404], 
+               Alignment -> {Left, Top}], SpanFromLeft, SpanFromLeft, 
+              SpanFromLeft, SpanFromLeft, SpanFromLeft, SpanFromLeft, 
+              SpanFromLeft, SpanFromLeft, SpanFromLeft}}, 
+            BaseStyle -> {
+             ContextMenu -> 
+              Dynamic[TypeSystem`NestedGrid`PackagePrivate`$\
+contextMenuTrigger; 
+                Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                  "f9bda547-d174-4afe-a70f-285804fe35ef", {}, 
+                  TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                  TypeSystem`NestedGrid`PackagePrivate`$\
+lastContextMenuTrigger, TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu,
+                   True, TypeSystem`NestedGrid`PackagePrivate`$\
+lastContextMenuTrigger = 
+                   TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                  TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                   Block[{TypeSystem`NestedGrid`PackagePrivate`$\
+globalScrollPos = {TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                    
+                    With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    "Show " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    "Hide " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    "f9bda547-d174-4afe-a70f-285804fe35ef"][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], Nothing]}]]]]], FontFamily -> 
+              "Source Sans Pro", FontSize -> 14, FontWeight -> Plain}, 
+            Dividers -> All, FrameStyle -> 
+            RGBColor[0.749003690406716, 0.749003690406716, 0.749003690406716],
+             Spacings -> {0, 0}, Alignment -> Left, 
+            BaseStyle -> {
+             FontFamily -> "Source Sans Pro", FontSize -> 14, FontWeight -> 
+              Plain}], LineBreakWithin -> False, ContextMenu -> {}, 
+           NumberMarks -> False, ShowAutoStyles -> False]], 
+        TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+       Dynamic[
+        TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+           Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+           
+           Module[{TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+             TypeSystem`NestedGrid`PackagePrivate`datasetData[
+              TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+               FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+               TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+               TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+               TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                "f9bda547-d174-4afe-a70f-285804fe35ef"][
+               TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+              Not[
+               FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+              TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+              TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+         TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+         TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+         TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+           FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+           TypeSystem`SparseGrid[
+            TypeSystem`H["(data no longer present)"]], 
+           TypeSystem`NestedGrid`PackagePrivate`renderedGrid]], 
+        TrackedSymbols :> {
+         TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+          TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+       DynamicModuleValues :> {}], 
+      TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+       TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+        TypeSystem`PackageScope`SubViewPathbar[
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+         TypeSystem`NestedGrid`PackagePrivate`updateState[
+         TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+          TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+          TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+          TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+          TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+       TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+      TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Dynamic[
+       Replace[
+        Replace[
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+         TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+            TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+            Blank[]] -> "", 
+          TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+            TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+            Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+             Blank[]], 
+            Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+             Blank[]], 
+            Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+             Blank[]]] :> (
+           Increment[
+            TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+           TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+            TypeSystem`NestedGrid`PackagePrivate`path$; 
+           TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+            TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+           TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+            TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+           TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+            TypeSystem`NestedGrid`PackagePrivate`localHold[
+             TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+           TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+            TypeSystem`NestedGrid`PackagePrivate`path$, 
+             TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+          Spacer[10], Blank[] :> Spacer[10]}], 
+        Pattern[TypeSystem`NestedGrid`PackagePrivate`bar, 
+          Except[
+           Alternatives[
+            Blank[Spacer], ""]]] :> 
+        TypeSystem`NestedGrid`PackagePrivate`makeFramedPathbar[
+         TypeSystem`NestedGrid`PackagePrivate`bar]], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], 
+      TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+      DynamicWrapperBox[
+       DynamicBox[ToBoxes[
+         Dataset`DatasetContent[
+         2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+          "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], 
+          "State" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+          "VPos" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], 
+          "HPos" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], 
+          "TopBar" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], 
+          "BottomBar" -> 
+          Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+          Hold[
+            TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+        ImageSizeCache->{
+         877.8483437499999, {97.23850598144531, 102.97043957519531`}},
+        TrackedSymbols:>{
+         TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+          TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+       MouseAnnotation[],
+       ImageSizeCache->{
+        877.8483437499999, {97.23850598144531, 102.97043957519531`}}],
+      BaseStyle->{
+       LineBreakWithin -> False, 
+        LightDarkAutoColorRules -> <|"MarkedColors" -> True|>},
+      DynamicModuleValues:>{},
+      Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
+       CreateUUID[]),
+      UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+     Deploy,
+     DefaultBaseStyle->"Deploy"],
+    Dataset`InterpretDataset[1],
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False]}]}]], "Input",
+ CellChangeTimes->{{3.974210141246565*^9, 3.974210149727531*^9}, {
+  3.97421058178308*^9, 
+  3.974210693003276*^9}},ExpressionUUID->"1478be25-4fb1-4921-b0a0-\
+7480eff3ef24"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"target", " ", "zip", " ", "codes"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"combinedData", "=", 
+     RowBox[{"Select", "[", 
+      RowBox[{"Data", ",", 
+       RowBox[{
+        RowBox[{"MemberQ", "[", 
+         RowBox[{"validCustomerClasses", ",", "#CUSTOMERCLASS"}], "]"}], 
+        "&"}]}], "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"zipSets", "=", 
+     RowBox[{"<|", 
+      RowBox[{
+       RowBox[{"\"\<95113\>\"", "->", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<dataCenter\>\"", "->", "95113"}], ",", 
+          RowBox[{"\"\<comparative\>\"", "->", 
+           RowBox[{"{", 
+            RowBox[{"95045", ",", "95127", ",", "95205", ",", "95003"}], 
+            "}"}]}]}], "|>"}]}], ",", 
+       RowBox[{"\"\<95605\>\"", "->", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<dataCenter\>\"", "->", "95605"}], ",", 
+          RowBox[{"\"\<comparative\>\"", "->", 
+           RowBox[{"{", 
+            RowBox[{"95573", ",", "95542", ",", "95616", ",", "95695"}], 
+            "}"}]}]}], "|>"}]}], ",", 
+       RowBox[{"\"\<93309\>\"", "->", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<dataCenter\>\"", "->", "93309"}], ",", 
+          RowBox[{"\"\<comparative\>\"", "->", 
+           RowBox[{"{", 
+            RowBox[{"93420", ",", "93446", ",", "93301", ",", "93250"}], 
+            "}"}]}]}], "|>"}]}]}], "|>"}]}], ";"}], "\n"}]}]], "Input",
+ CellChangeTimes->{{3.974211365850647*^9, 3.974211380561777*^9}, {
+  3.9742132524025097`*^9, 3.974213254375475*^9}},
+ CellLabel->
+  "In[148]:=",ExpressionUUID->"d42863b3-951f-4aa1-8f9e-733a0d88ed26"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"target", " ", "customer", " ", "classes"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"validCustomerClasses", "=", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Elec- Commercial\>\"", ",", "\"\<Elec- Industrial\>\"", ",",
+        " ", "\"\<Elec- Residential\>\""}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"combinedData", "=", 
+     RowBox[{"Select", "[", 
+      RowBox[{"Data", ",", 
+       RowBox[{
+        RowBox[{"MemberQ", "[", 
+         RowBox[{"validCustomerClasses", ",", "#CUSTOMERCLASS"}], "]"}], 
+        "&"}]}], "]"}]}], ";"}], "\n"}]}]], "Input",
+ CellChangeTimes->{{3.9742107233620033`*^9, 3.974210744110827*^9}, {
+   3.9742108936816587`*^9, 3.974210893984231*^9}, {3.974211389834004*^9, 
+   3.974211403360711*^9}, 3.974212403160561*^9},
+ CellLabel->
+  "In[150]:=",ExpressionUUID->"37f2cea6-59d3-4343-95e5-1a9178edf0c0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Aggregate", " ", "Combined", " ", "Data", " ", "into", " ", "Monthly", " ",
+     "ZIP", " ", "Code", " ", "Level", " ", "Dataset"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"makeMonthlyDataFromCombined", "[", 
+      RowBox[{"data_", ",", 
+       RowBox[{"(*", "combinedData", "*)"}], "dataCenter_", ",", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"e", ".", "g", "."}], ",", "95605"}], "*)"}], 
+       "compZips_List"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "allZips", ",", "subset", ",", "list", ",", "grouped", ",", 
+         "monthly"}], "}"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"1.", " ", "Keep", " ", "only", " ", "data", " ", "center"}],
+          "+", 
+         RowBox[{"comparative", " ", "ZIP", " ", "codes"}]}], "*)"}], 
+       RowBox[{
+        RowBox[{"allZips", "=", 
+         RowBox[{"DeleteDuplicates", "@", 
+          RowBox[{"Join", "[", 
+           RowBox[{
+            RowBox[{"{", "dataCenter", "}"}], ",", "compZips"}], "]"}]}]}], ";",
+         "\[IndentingNewLine]", 
+        RowBox[{"subset", "=", 
+         RowBox[{"Select", "[", 
+          RowBox[{"data", ",", 
+           RowBox[{
+            RowBox[{"MemberQ", "[", 
+             RowBox[{"allZips", ",", "#ZIPCODE"}], "]"}], "&"}]}], "]"}]}], ";", 
+        RowBox[{"(*", "Dataset", "*)"}], 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{
+          "2.", " ", "Convert", " ", "to", " ", "List", " ", "of", " ", 
+           "Associations"}], ";", 
+          RowBox[{
+          "YEAR", " ", "and", " ", "MONTH", " ", "remain", " ", "inside"}]}], 
+         "*)"}], 
+        RowBox[{"list", "=", 
+         RowBox[{"Normal", "[", "subset", "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{
+          "3.", " ", "Monthly", " ", "aggregation", " ", "by", " ", 
+           "ZIPCODE"}], "+", "YEAR", "+", "MONTH"}], "*)"}], 
+        RowBox[{"grouped", "=", 
+         RowBox[{"GroupBy", "[", 
+          RowBox[{"list", ",", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"#ZIPCODE", ",", "#YEAR", ",", "#MONTH"}], "}"}], "&"}], 
+           ",", 
+           RowBox[{"Function", "[", 
+            RowBox[{"group", ",", 
+             RowBox[{"<|", 
+              RowBox[{
+               RowBox[{"\"\<TOTALKWH\>\"", "->", 
+                RowBox[{"Total", "[", 
+                 RowBox[{"Lookup", "[", 
+                  RowBox[{"group", ",", "\"\<TOTALKWH\>\""}], "]"}], "]"}]}], 
+               ",", 
+               RowBox[{"\"\<TOTALCUSTOMERS\>\"", "->", 
+                RowBox[{"Total", "[", 
+                 RowBox[{"Lookup", "[", 
+                  RowBox[{"group", ",", "\"\<TOTALCUSTOMERS\>\""}], "]"}], 
+                 "]"}]}]}], "|>"}]}], "]"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"4.", " ", "Rebuild", " ", "YEAR"}], ",", 
+          RowBox[{
+          "MONTH", " ", "and", " ", "YEAR_MONTH", " ", "fields", " ", "from", 
+           " ", "the", " ", "key"}]}], "*)"}], 
+        RowBox[{"monthly", "=", 
+         RowBox[{"KeyValueMap", "[", 
+          RowBox[{
+           RowBox[{"Function", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"key", ",", "agg"}], "}"}], ",", 
+             RowBox[{"Module", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"zip", "=", 
+                  RowBox[{"key", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+                 RowBox[{"yr", "=", 
+                  RowBox[{"key", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+                 RowBox[{"m", "=", 
+                  RowBox[{"key", "[", 
+                   RowBox[{"[", "3", "]"}], "]"}]}]}], "}"}], ",", 
+               RowBox[{"<|", 
+                RowBox[{
+                 RowBox[{"\"\<ZIPCODE\>\"", "->", "zip"}], ",", 
+                 RowBox[{"\"\<YEAR\>\"", "->", "yr"}], ",", 
+                 RowBox[{"\"\<MONTH\>\"", "->", "m"}], ",", 
+                 RowBox[{"\"\<YEAR_MONTH\>\"", "->", 
+                  RowBox[{"DateObject", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"yr", ",", "m", ",", "1"}], "}"}], "]"}]}], ",", 
+                 RowBox[{"\"\<TOTALKWH\>\"", "->", 
+                  RowBox[{"agg", "[", "\"\<TOTALKWH\>\"", "]"}]}], ",", 
+                 RowBox[{"\"\<TOTALCUSTOMERS\>\"", "->", 
+                  RowBox[{"agg", "[", "\"\<TOTALCUSTOMERS\>\"", "]"}]}]}], 
+                "|>"}]}], "]"}]}], "]"}], ",", "grouped"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Dataset", "[", "monthly", "]"}]}]}], "]"}]}], ";"}], 
+   "\n"}]}]], "Input",
+ CellChangeTimes->{{3.974214508736266*^9, 3.974214515628137*^9}, {
+  3.974214563262926*^9, 3.974214573958899*^9}},
+ CellLabel->
+  "In[211]:=",ExpressionUUID->"ab74ddd0-dc6b-449b-ac88-eb5499bc09fc"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Detect", " ", "and", " ", "Correct", " ", "Load", " ", "Masking", " ", 
+    "in", " ", "Monthly", " ", "Aggregated", " ", "Data"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"detectAndCorrectLoadMasking", "[", 
+      RowBox[{
+      "monthlyDS_Dataset", ",", "dataCenterZip_", ",", "neighborZips_List"}], 
+      "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "data", ",", "baselines", ",", "dcBaseline", ",", 
+         "suspiciousThreshold", ",", "dcIndices", ",", 
+         RowBox[{"suspiciousCount", "=", "0"}], ",", 
+         RowBox[{"reallocatedCount", "=", "0"}], ",", 
+         RowBox[{"reallocationLog", "=", 
+          RowBox[{"{", "}"}]}], ",", "idx", ",", "row", ",", "yearMonth", ",",
+          "originalUsage", ",", "neighborIdxs", ",", "candidates", ",", 
+         "base", ",", "usage", ",", "excess", ",", "excessPct", ",", "best", ",",
+          "sourceIdx"}], "}"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Convert", " ", "Dataset"}], "->", 
+         RowBox[{"List", " ", "of", " ", "Associations"}]}], "*)"}], 
+       RowBox[{
+        RowBox[{"data", "=", 
+         RowBox[{"Normal", "[", "monthlyDS", "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Compute", " ", "baseline", " ", "usage", " ", "for", " ", "each", " ",
+           "ZIP", " ", "code", " ", "using", " ", "median", " ", "TOTALKWH"}],
+          "*)"}], 
+        RowBox[{"baselines", "=", 
+         RowBox[{"Association", "@", 
+          RowBox[{"GroupBy", "[", 
+           RowBox[{"data", ",", 
+            RowBox[{"#ZIPCODE", "&"}], ",", 
+            RowBox[{
+             RowBox[{"Median", "[", 
+              RowBox[{"Lookup", "[", 
+               RowBox[{"#", ",", "\"\<TOTALKWH\>\""}], "]"}], "]"}], "&"}]}], 
+           "]"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Baseline", " ", "for", " ", "the", " ", "data", " ", "center", " ", 
+          "ZIP"}], "*)"}], 
+        RowBox[{"dcBaseline", "=", 
+         RowBox[{"Lookup", "[", 
+          RowBox[{"baselines", ",", "dataCenterZip", ",", "0."}], "]"}]}], ";",
+         "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"Threshold", ":", 
+           RowBox[{
+            RowBox[{"if", " ", "DC", " ", "usage"}], "<", 
+            RowBox[{
+            "50", " ", "percent", " ", "of", " ", "its", " ", 
+             "baseline"}]}]}], ",", 
+          RowBox[{"flag", " ", "as", " ", "suspicious"}]}], "*)"}], 
+        RowBox[{"suspiciousThreshold", "=", 
+         RowBox[{"0.5", " ", "dcBaseline"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Identify", " ", "all", " ", "indices", " ", "belonging", " ", "to", 
+          " ", "the", " ", "data", " ", "center", " ", "ZIP"}], "*)"}], 
+        RowBox[{"dcIndices", "=", 
+         RowBox[{"Flatten", "@", 
+          RowBox[{"Position", "[", 
+           RowBox[{"data", ",", 
+            RowBox[{"r_Association", "/;", 
+             RowBox[{
+              RowBox[{"r", "[", "\"\<ZIPCODE\>\"", "]"}], "==", 
+              "dataCenterZip"}]}]}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Loop", " ", "through", " ", "each", " ", "data", " ", "center", " ",
+           "record"}], "*)"}], 
+        RowBox[{"Do", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"row", "=", 
+            RowBox[{"data", "[", 
+             RowBox[{"[", "idx", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"(*", 
+            RowBox[{
+            "Check", " ", "if", " ", "the", " ", "record", " ", "is", " ", 
+             "suspicious"}], "*)"}], 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"row", "[", "\"\<TOTALKWH\>\"", "]"}], "<", 
+              "suspiciousThreshold"}], ",", 
+             RowBox[{
+              RowBox[{"suspiciousCount", "++"}], ";", "\[IndentingNewLine]", 
+              RowBox[{"yearMonth", "=", 
+               RowBox[{"row", "[", "\"\<YEAR_MONTH\>\"", "]"}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{"originalUsage", "=", 
+               RowBox[{"row", "[", "\"\<TOTALKWH\>\"", "]"}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{"(*", 
+               RowBox[{
+               "Find", " ", "neighbors", " ", "with", " ", "the", " ", "same",
+                 " ", "YEAR_MONTH"}], "*)"}], 
+              RowBox[{"neighborIdxs", "=", 
+               RowBox[{"Flatten", "@", 
+                RowBox[{"Position", "[", 
+                 RowBox[{"data", ",", 
+                  RowBox[{"r_Association", "/;", 
+                   RowBox[{
+                    RowBox[{"MemberQ", "[", 
+                    RowBox[{"neighborZips", ",", 
+                    RowBox[{"r", "[", "\"\<ZIPCODE\>\"", "]"}]}], "]"}], "&&", 
+                    RowBox[{
+                    RowBox[{"r", "[", "\"\<YEAR_MONTH\>\"", "]"}], "===", 
+                    "yearMonth"}]}]}]}], "]"}]}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{"(*", 
+               RowBox[{
+               "Collect", " ", "candidates", " ", "with", " ", "excess", " ", 
+                "usage"}], "*)"}], 
+              RowBox[{"candidates", "=", 
+               RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+              RowBox[{"Do", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"usage", "=", 
+                  RowBox[{"data", "[", 
+                   RowBox[{"[", 
+                    RowBox[{"sourceIdx", ",", "\"\<TOTALKWH\>\""}], "]"}], 
+                   "]"}]}], ";", "\[IndentingNewLine]", 
+                 RowBox[{"base", "=", 
+                  RowBox[{"Lookup", "[", 
+                   RowBox[{"baselines", ",", 
+                    RowBox[{"data", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"sourceIdx", ",", "\"\<ZIPCODE\>\""}], "]"}], 
+                    "]"}], ",", "usage"}], "]"}]}], ";", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"(*", 
+                  RowBox[{
+                  "Compute", " ", "excess", " ", "usage", " ", "above", " ", 
+                   "baseline"}], "*)"}], 
+                 RowBox[{"If", "[", 
+                  RowBox[{
+                   RowBox[{"base", ">", "0"}], ",", 
+                   RowBox[{
+                    RowBox[{"excess", "=", 
+                    RowBox[{"usage", "-", "base"}]}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"excessPct", "=", 
+                    RowBox[{"100.", " ", 
+                    RowBox[{"excess", "/", "base"}]}]}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"(*", 
+                    RowBox[{
+                    "Keep", " ", "only", " ", "if", " ", "excess", " ", 
+                    "exceeds", " ", "50", " ", "percent"}], "*)"}], 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"excessPct", ">", "50"}], ",", 
+                    RowBox[{
+                    RowBox[{"AppendTo", "[", 
+                    RowBox[{"candidates", ",", 
+                    RowBox[{"<|", 
+                    RowBox[{
+                    RowBox[{"\"\<sourceIdx\>\"", "->", "sourceIdx"}], ",", 
+                    RowBox[{"\"\<excess\>\"", "->", "excess"}], ",", 
+                    RowBox[{"\"\<excessPct\>\"", "->", "excessPct"}]}], 
+                    "|>"}]}], "]"}], ";"}]}], "]"}], ";"}]}], "]"}], ";"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"sourceIdx", ",", "neighborIdxs"}], "}"}]}], "]"}], ";",
+               "\[IndentingNewLine]", 
+              RowBox[{"(*", 
+               RowBox[{
+                RowBox[{
+                "If", " ", "there", " ", "are", " ", "valid", " ", 
+                 "candidates"}], ",", 
+                RowBox[{
+                "pick", " ", "the", " ", "one", " ", "with", " ", "maximum", " ",
+                  "excess", " ", "percentage"}]}], "*)"}], 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"candidates", "=!=", 
+                 RowBox[{"{", "}"}]}], ",", 
+                RowBox[{
+                 RowBox[{"best", "=", 
+                  RowBox[{"Last", "@", 
+                   RowBox[{"SortBy", "[", 
+                    RowBox[{"candidates", ",", 
+                    RowBox[{"#excessPct", "&"}]}], "]"}]}]}], ";", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"reallocatedCount", "++"}], ";", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"sourceIdx", "=", 
+                  RowBox[{"best", "[", "\"\<sourceIdx\>\"", "]"}]}], ";", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"(*", 
+                  RowBox[{
+                  "Shift", " ", "excess", " ", "energy", " ", "back", " ", 
+                   "to", " ", "the", " ", "data", " ", "center", " ", "ZIP"}],
+                   "*)"}], 
+                 RowBox[{
+                  RowBox[{"data", "[", 
+                   RowBox[{"[", 
+                    RowBox[{"idx", ",", "\"\<TOTALKWH\>\""}], "]"}], "]"}], "=", 
+                  RowBox[{"originalUsage", "+", 
+                   RowBox[{"best", "[", "\"\<excess\>\"", "]"}]}]}], ";", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"data", "[", 
+                   RowBox[{"[", 
+                    RowBox[{"sourceIdx", ",", "\"\<TOTALKWH\>\""}], "]"}], 
+                   "]"}], "=", 
+                  RowBox[{
+                   RowBox[{"data", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"sourceIdx", ",", "\"\<TOTALKWH\>\""}], "]"}], 
+                    "]"}], "-", 
+                   RowBox[{"best", "[", "\"\<excess\>\"", "]"}]}]}], ";", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"(*", 
+                  RowBox[{
+                  "Log", " ", "this", " ", "reallocation", " ", "event"}], 
+                  "*)"}], 
+                 RowBox[{"AppendTo", "[", 
+                  RowBox[{"reallocationLog", ",", 
+                   RowBox[{"<|", 
+                    RowBox[{
+                    RowBox[{"\"\<date\>\"", "->", "yearMonth"}], ",", 
+                    RowBox[{"\"\<dc_zip\>\"", "->", "dataCenterZip"}], ",", 
+                    RowBox[{"\"\<dc_original\>\"", "->", "originalUsage"}], ",", 
+                    RowBox[{"\"\<dc_corrected\>\"", "->", 
+                    RowBox[{"originalUsage", "+", 
+                    RowBox[{"best", "[", "\"\<excess\>\"", "]"}]}]}], ",", 
+                    RowBox[{"\"\<source_zip\>\"", "->", 
+                    RowBox[{"data", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"sourceIdx", ",", "\"\<ZIPCODE\>\""}], "]"}], 
+                    "]"}]}], ",", 
+                    RowBox[{"\"\<source_original\>\"", "->", "usage"}], ",", 
+                    RowBox[{"\"\<source_corrected\>\"", "->", 
+                    RowBox[{"usage", "-", 
+                    RowBox[{"best", "[", "\"\<excess\>\"", "]"}]}]}], ",", 
+                    RowBox[{"\"\<reallocated_kwh\>\"", "->", 
+                    RowBox[{"best", "[", "\"\<excess\>\"", "]"}]}], ",", 
+                    RowBox[{"\"\<excess_pct\>\"", "->", 
+                    RowBox[{"best", "[", "\"\<excessPct\>\"", "]"}]}]}], 
+                    "|>"}]}], "]"}], ";"}]}], "]"}], ";"}]}], "]"}], ";"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"idx", ",", "dcIndices"}], "}"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Output", " ", "structured", " ", "results"}], "*)"}], 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<correctedMonthly\>\"", "->", 
+           RowBox[{"Dataset", "[", "data", "]"}]}], ",", 
+          RowBox[{"\"\<reallocationLog\>\"", "->", 
+           RowBox[{"Dataset", "[", "reallocationLog", "]"}]}], ",", 
+          RowBox[{"\"\<suspiciousCount\>\"", "->", "suspiciousCount"}], ",", 
+          RowBox[{"\"\<reallocatedCount\>\"", "->", "reallocatedCount"}]}], 
+         "|>"}]}]}], "]"}]}], ";"}], "\n"}]}]], "Input",
+ CellChangeTimes->{{3.9742146319007387`*^9, 3.974214672237871*^9}},
+ CellLabel->
+  "In[212]:=",ExpressionUUID->"19233d15-211b-44cb-a1db-efaa461dc82f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Run", " ", "Load", " ", "Masking", " ", "Pipeline", " ", "For", " ", 
+    "One", " ", "Data", " ", "Center", " ", "Group"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"runForCenter", "[", "key_String", "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"dc", ",", "comps", ",", "monthly", ",", "res"}], "}"}], ",", 
+       
+       RowBox[{"(*", 
+        RowBox[{
+        "Look", " ", "up", " ", "data", " ", "center", " ", "ZIP", " ", "for",
+          " ", "this", " ", "key"}], "*)"}], 
+       RowBox[{
+        RowBox[{"dc", "=", 
+         RowBox[{"zipSets", "[", 
+          RowBox[{"key", ",", "\"\<dataCenter\>\""}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Look", " ", "up", " ", "comparative", " ", "ZIP", " ", "codes", " ",
+           "for", " ", "this", " ", "key"}], "*)"}], 
+        RowBox[{"comps", "=", 
+         RowBox[{"zipSets", "[", 
+          RowBox[{"key", ",", "\"\<comparative\>\""}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Build", " ", "monthly", " ", "aggregated", " ", "dataset", " ", 
+          "for", " ", "this", " ", "data", " ", "center", " ", "and", " ", 
+          "its", " ", "comparatives"}], "*)"}], 
+        RowBox[{"monthly", "=", 
+         RowBox[{"makeMonthlyDataFromCombined", "[", 
+          RowBox[{"combinedData", ",", "dc", ",", "comps"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Detect", " ", "and", " ", "correct", " ", "possible", " ", "load", " ",
+           "masking", " ", "for", " ", "this", " ", "data", " ", "center"}], 
+         "*)"}], 
+        RowBox[{"res", "=", 
+         RowBox[{"detectAndCorrectLoadMasking", "[", 
+          RowBox[{"monthly", ",", "dc", ",", "comps"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Return", " ", "both", " ", "raw", " ", "monthly", " ", "data", " ", 
+          "and", " ", "correction", " ", "results"}], "*)"}], 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<monthly\>\"", "->", "monthly"}], ",", 
+          RowBox[{"\"\<correctedMonthly\>\"", "->", 
+           RowBox[{"res", "[", "\"\<correctedMonthly\>\"", "]"}]}], ",", 
+          RowBox[{"\"\<reallocationLog\>\"", "->", 
+           RowBox[{"res", "[", "\"\<reallocationLog\>\"", "]"}]}], ",", 
+          RowBox[{"\"\<suspiciousCount\>\"", "->", 
+           RowBox[{"res", "[", "\"\<suspiciousCount\>\"", "]"}]}], ",", 
+          RowBox[{"\"\<reallocatedCount\>\"", "->", 
+           RowBox[{"res", "[", "\"\<reallocatedCount\>\"", "]"}]}]}], 
+         "|>"}]}]}], "]"}]}], ";"}], "\n"}]}]], "Input",
+ CellChangeTimes->{{3.974214724421132*^9, 3.974214732215398*^9}},
+ CellLabel->
+  "In[213]:=",ExpressionUUID->"670f004b-3d51-447a-8204-c2cbe5470029"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Run", " ", "the", " ", "Load", " ", "Masking", " ", "Pipeline", " ", 
+    "for", " ", "Three", " ", "Data", " ", "Centers"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"res95113", "=", 
+     RowBox[{"runForCenter", "[", "\"\<95113\>\"", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"res95605", "=", 
+     RowBox[{"runForCenter", "[", "\"\<95605\>\"", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"res93309", "=", 
+     RowBox[{"runForCenter", "[", "\"\<93309\>\"", "]"}]}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.9742147456506033`*^9, 3.974214757591465*^9}},
+ CellLabel->
+  "In[214]:=",ExpressionUUID->"bb2c6f81-e0d9-4098-9e9e-398d5c2a09bc"]
+},
+WindowSize->{979, 911},
+WindowMargins->{{72, Automatic}, {15, Automatic}},
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"e42a842e-7967-4181-bf81-756af5dec596"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[422, 15, 454, 12, 49, "Input",ExpressionUUID->"c84fcfc6-9b45-4b97-b7ad-9c79250bf6c1"],
+Cell[879, 29, 238, 4, 33, "Output",ExpressionUUID->"47cd1415-8d60-4f7a-b84c-f5270081b869"]
+}, Open  ]],
+Cell[1132, 36, 80003, 1542, 268, "Input",ExpressionUUID->"1478be25-4fb1-4921-b0a0-7480eff3ef24"],
+Cell[81138, 1580, 1720, 45, 151, "Input",ExpressionUUID->"d42863b3-951f-4aa1-8f9e-733a0d88ed26"],
+Cell[82861, 1627, 916, 23, 90, "Input",ExpressionUUID->"37f2cea6-59d3-4343-95e5-1a9178edf0c0"],
+Cell[83780, 1652, 5052, 124, 397, "Input",ExpressionUUID->"ab74ddd0-dc6b-449b-ac88-eb5499bc09fc"],
+Cell[88835, 1778, 12480, 273, 907, "Input",ExpressionUUID->"19233d15-211b-44cb-a1db-efaa461dc82f"],
+Cell[101318, 2053, 2984, 69, 254, "Input",ExpressionUUID->"670f004b-3d51-447a-8204-c2cbe5470029"],
+Cell[104305, 2124, 739, 20, 90, "Input",ExpressionUUID->"bb2c6f81-e0d9-4098-9e9e-398d5c2a09bc"]
+}
+]
+*)
+
