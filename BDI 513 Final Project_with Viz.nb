@@ -3,10 +3,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[    404750,       8136]
-NotebookOptionsPosition[    402866,       8096]
-NotebookOutlinePosition[    403259,       8112]
-CellTagsIndexPosition[    403216,       8109]
+NotebookDataLength[    408788,       8238]
+NotebookOptionsPosition[    406994,       8199]
+NotebookOutlinePosition[    407387,       8215]
+CellTagsIndexPosition[    407344,       8212]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3981,7 +3981,7 @@ Cell[BoxData[
                     TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
                     TypeSystem`NestedGrid`PackagePrivate`$state$$], 
                     TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
-                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ - 20 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + (-20) 
                     If[True, 286862, 1], {1, 286862 - -20 + 1}]; 
                     TypeSystem`NestedGrid`PackagePrivate`updateState[
                     TypeSystem`NestedGrid`PackagePrivate`$state$$, 
@@ -4027,7 +4027,7 @@ Cell[BoxData[
                     TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
                     TypeSystem`NestedGrid`PackagePrivate`$state$$], 
                     TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
-                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ - 20 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + (-20) 
                     If[False, 286862, 1], {1, 286862 - -20 + 1}]; 
                     TypeSystem`NestedGrid`PackagePrivate`updateState[
                     TypeSystem`NestedGrid`PackagePrivate`$state$$, 
@@ -4250,7 +4250,7 @@ Cell[BoxData[
                     TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
                     TypeSystem`NestedGrid`PackagePrivate`$state$$], 
                     TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 
-                    Clip[TypeSystem`NestedGrid`PackagePrivate`$hPos$$ - 10 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$hPos$$ + (-10) 
                     If[True, 12, 1], {1, 12 - -10 + 1}]; 
                     TypeSystem`NestedGrid`PackagePrivate`updateState[
                     TypeSystem`NestedGrid`PackagePrivate`$state$$, 
@@ -4298,7 +4298,7 @@ Cell[BoxData[
                     TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
                     TypeSystem`NestedGrid`PackagePrivate`$state$$], 
                     TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 
-                    Clip[TypeSystem`NestedGrid`PackagePrivate`$hPos$$ - 10 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$hPos$$ + (-10) 
                     If[False, 12, 1], {1, 12 - -10 + 1}]; 
                     TypeSystem`NestedGrid`PackagePrivate`updateState[
                     TypeSystem`NestedGrid`PackagePrivate`$state$$, 
@@ -6383,10 +6383,7 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
        TypeSystem`NestedGrid`PackagePrivate`bar]], 
      TrackedSymbols :> {
       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], 
-    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
-    TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-    "40649e04-277c-41ab-9a84-9aa9835e8d70"][{All, "TOTALKWH"}, "ColumnHeader",
-      True]}, 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
     DynamicWrapperBox[
      DynamicBox[ToBoxes[
        Dataset`DatasetContent[
@@ -6426,11 +6423,200 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
  CellLabel->"Out[20]=",ExpressionUUID->"cccff11c-819a-4416-957e-dd7e0b7c851d"]
 }, Open  ]],
 
-Cell[, "Input",ExpressionUUID->"d42863b3-951f-4aa1-8f9e-733a0d88ed26"],
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"target", " ", "zip", " ", "codes"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"combinedData", "=", 
+     RowBox[{"Select", "[", 
+      RowBox[{"Data", ",", 
+       RowBox[{
+        RowBox[{"MemberQ", "[", 
+         RowBox[{"validCustomerClasses", ",", "#CUSTOMERCLASS"}], "]"}], 
+        "&"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{
+    RowBox[{"zipSets", "=", 
+     RowBox[{"<|", 
+      RowBox[{
+       RowBox[{"\"\<95113\>\"", "->", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<dataCenter\>\"", "->", "95113"}], ",", 
+          RowBox[{"\"\<comparative\>\"", "->", 
+           RowBox[{"{", 
+            RowBox[{"95045", ",", "95127", ",", "95205", ",", "95003"}], 
+            "}"}]}]}], "|>"}]}], ",", 
+       RowBox[{"\"\<95605\>\"", "->", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<dataCenter\>\"", "->", "95605"}], ",", 
+          RowBox[{"\"\<comparative\>\"", "->", 
+           RowBox[{"{", 
+            RowBox[{"95573", ",", "95542", ",", "95616", ",", "95695"}], 
+            "}"}]}]}], "|>"}]}], ",", 
+       RowBox[{"\"\<93309\>\"", "->", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<dataCenter\>\"", "->", "93309"}], ",", 
+          RowBox[{"\"\<comparative\>\"", "->", 
+           RowBox[{"{", 
+            RowBox[{"93420", ",", "93446", ",", "93301", ",", "93250"}], 
+            "}"}]}]}], "|>"}]}]}], "|>"}]}], ";"}], "\n"}]}]], "Input",
+ CellChangeTimes->{{3.974211365850647*^9, 3.974211380561777*^9}, {
+  3.9742132524025097`*^9, 3.974213254375475*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"d42863b3-951f-4aa1-8f9e-733a0d88ed26"],
 
-Cell[, "Input",ExpressionUUID->"37f2cea6-59d3-4343-95e5-1a9178edf0c0"],
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"target", " ", "customer", " ", "classes"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"validCustomerClasses", "=", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Elec- Commercial\>\"", ",", "\"\<Elec- Industrial\>\"", ",",
+        " ", "\"\<Elec- Residential\>\""}], "}"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"combinedData", "=", 
+     RowBox[{"Select", "[", 
+      RowBox[{"Data", ",", 
+       RowBox[{
+        RowBox[{"MemberQ", "[", 
+         RowBox[{"validCustomerClasses", ",", "#CUSTOMERCLASS"}], "]"}], 
+        "&"}]}], "]"}]}], ";"}], "\n"}]}]], "Input",
+ CellChangeTimes->{{3.9742107233620033`*^9, 3.974210744110827*^9}, {
+   3.9742108936816587`*^9, 3.974210893984231*^9}, {3.974211389834004*^9, 
+   3.974211403360711*^9}, 3.974212403160561*^9},
+ CellLabel->"In[23]:=",ExpressionUUID->"37f2cea6-59d3-4343-95e5-1a9178edf0c0"],
 
-Cell[, "Input",ExpressionUUID->"ab74ddd0-dc6b-449b-ac88-eb5499bc09fc"],
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Aggregate", " ", "Combined", " ", "Data", " ", "into", " ", "Monthly", " ",
+     "ZIP", " ", "Code", " ", "Level", " ", "Dataset"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"makeMonthlyDataFromCombined", "[", 
+      RowBox[{"data_", ",", 
+       RowBox[{"(*", "combinedData", "*)"}], "dataCenter_", ",", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"e", ".", "g", "."}], ",", "95605"}], "*)"}], 
+       "compZips_List"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "allZips", ",", "subset", ",", "list", ",", "grouped", ",", 
+         "monthly"}], "}"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"1.", " ", "Keep", " ", "only", " ", "data", " ", "center"}],
+          "+", 
+         RowBox[{"comparative", " ", "ZIP", " ", "codes"}]}], "*)"}], 
+       RowBox[{
+        RowBox[{"allZips", "=", 
+         RowBox[{"DeleteDuplicates", "@", 
+          RowBox[{"Join", "[", 
+           RowBox[{
+            RowBox[{"{", "dataCenter", "}"}], ",", "compZips"}], "]"}]}]}], ";",
+         "\[IndentingNewLine]", 
+        RowBox[{"subset", "=", 
+         RowBox[{"Select", "[", 
+          RowBox[{"data", ",", 
+           RowBox[{
+            RowBox[{"MemberQ", "[", 
+             RowBox[{"allZips", ",", "#ZIPCODE"}], "]"}], "&"}]}], "]"}]}], ";", 
+        RowBox[{"(*", "Dataset", "*)"}], 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{
+          "2.", " ", "Convert", " ", "to", " ", "List", " ", "of", " ", 
+           "Associations"}], ";", 
+          RowBox[{
+          "YEAR", " ", "and", " ", "MONTH", " ", "remain", " ", "inside"}]}], 
+         "*)"}], 
+        RowBox[{"list", "=", 
+         RowBox[{"Normal", "[", "subset", "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{
+          "3.", " ", "Monthly", " ", "aggregation", " ", "by", " ", 
+           "ZIPCODE"}], "+", "YEAR", "+", "MONTH"}], "*)"}], 
+        RowBox[{"grouped", "=", 
+         RowBox[{"GroupBy", "[", 
+          RowBox[{"list", ",", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"#ZIPCODE", ",", "#YEAR", ",", "#MONTH"}], "}"}], "&"}], 
+           ",", 
+           RowBox[{"Function", "[", 
+            RowBox[{"group", ",", 
+             RowBox[{"<|", 
+              RowBox[{
+               RowBox[{"\"\<TOTALKWH\>\"", "->", 
+                RowBox[{"Total", "[", 
+                 RowBox[{"Lookup", "[", 
+                  RowBox[{"group", ",", "\"\<TOTALKWH\>\""}], "]"}], "]"}]}], 
+               ",", 
+               RowBox[{"\"\<TOTALCUSTOMERS\>\"", "->", 
+                RowBox[{"Total", "[", 
+                 RowBox[{"Lookup", "[", 
+                  RowBox[{"group", ",", "\"\<TOTALCUSTOMERS\>\""}], "]"}], 
+                 "]"}]}]}], "|>"}]}], "]"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"4.", " ", "Rebuild", " ", "YEAR"}], ",", 
+          RowBox[{
+          "MONTH", " ", "and", " ", "YEAR_MONTH", " ", "fields", " ", "from", 
+           " ", "the", " ", "key"}]}], "*)"}], 
+        RowBox[{"monthly", "=", 
+         RowBox[{"KeyValueMap", "[", 
+          RowBox[{
+           RowBox[{"Function", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"key", ",", "agg"}], "}"}], ",", 
+             RowBox[{"Module", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"zip", "=", 
+                  RowBox[{"key", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+                 RowBox[{"yr", "=", 
+                  RowBox[{"key", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+                 RowBox[{"m", "=", 
+                  RowBox[{"key", "[", 
+                   RowBox[{"[", "3", "]"}], "]"}]}]}], "}"}], ",", 
+               RowBox[{"<|", 
+                RowBox[{
+                 RowBox[{"\"\<ZIPCODE\>\"", "->", "zip"}], ",", 
+                 RowBox[{"\"\<YEAR\>\"", "->", "yr"}], ",", 
+                 RowBox[{"\"\<MONTH\>\"", "->", "m"}], ",", 
+                 RowBox[{"\"\<YEAR_MONTH\>\"", "->", 
+                  RowBox[{"DateObject", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"yr", ",", "m", ",", "1"}], "}"}], "]"}]}], ",", 
+                 RowBox[{"\"\<TOTALKWH\>\"", "->", 
+                  RowBox[{"agg", "[", "\"\<TOTALKWH\>\"", "]"}]}], ",", 
+                 RowBox[{"\"\<TOTALCUSTOMERS\>\"", "->", 
+                  RowBox[{"agg", "[", "\"\<TOTALCUSTOMERS\>\"", "]"}]}]}], 
+                "|>"}]}], "]"}]}], "]"}], ",", "grouped"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Dataset", "[", "monthly", "]"}]}]}], "]"}]}], ";"}], 
+   "\n"}]}]], "Input",
+ CellChangeTimes->{{3.974214508736266*^9, 3.974214515628137*^9}, {
+  3.974214563262926*^9, 3.974214573958899*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"ab74ddd0-dc6b-449b-ac88-eb5499bc09fc"],
 
 Cell[BoxData[
  RowBox[{
@@ -6820,13 +7006,13 @@ Cell[BoxData[
   RowBox[{
    RowBox[{
     RowBox[{"allData", "=", 
-     RowBox[{"Normal", "[", "combinedData", "]"}]}], ";"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Normal", "[", "combinedData", "]"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Parameters", "-", 
      RowBox[{
      "Force", " ", "String", " ", "conversion", " ", "for", " ", "safe", " ", 
-      "matching"}]}], "*)"}], "\n", 
+      "matching"}]}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"targetZipStr", "=", 
      RowBox[{"ToString", "[", "95605", "]"}]}], ";"}], "\n", 
@@ -6835,14 +7021,14 @@ Cell[BoxData[
      RowBox[{"ToString", "/@", 
       RowBox[{"{", 
        RowBox[{"95573", ",", "95542", ",", "95616", ",", "95695"}], "}"}]}]}],
-     ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     ";"}], "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{
       RowBox[{"--", 
        RowBox[{"-", "Data"}]}], " ", "Center", " ", "Series", " ", 
       RowBox[{
-       RowBox[{"(", "95605", ")"}], "--"}]}], "-"}], "*)"}], "\n", 
+       RowBox[{"(", "95605", ")"}], "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"dcRows", "=", 
      RowBox[{"Select", "[", 
@@ -6866,11 +7052,11 @@ Cell[BoxData[
          RowBox[{"#", "[", 
           RowBox[{"[", 
            RowBox[{"All", ",", "\"\<TOTALKWH\>\""}], "]"}], "]"}], "]"}], 
-        "&"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        "&"}]}], "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Convert", " ", "to", " ", 
      RowBox[{"{", 
-      RowBox[{"Date", ",", "Value"}], "}"}], " ", "pairs"}], "*)"}], "\n", 
+      RowBox[{"Date", ",", "Value"}], "}"}], " ", "pairs"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"dcSeriesData", "=", 
      RowBox[{"KeyValueMap", "[", 
@@ -6889,14 +7075,14 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"dcSeriesData", "=", 
      RowBox[{"SortBy", "[", 
-      RowBox[{"dcSeriesData", ",", "First"}], "]"}]}], ";"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"dcSeriesData", ",", "First"}], "]"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{
       RowBox[{"--", 
        RowBox[{"-", "Comparison"}]}], " ", "Average", " ", 
-      RowBox[{"Series", "--"}]}], "-"}], "*)"}], "\n", 
+      RowBox[{"Series", "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"compRows", "=", 
      RowBox[{"Select", "[", 
@@ -6950,11 +7136,11 @@ Cell[BoxData[
          RowBox[{"#", "[", 
           RowBox[{"[", 
            RowBox[{"All", ",", "3"}], "]"}], "]"}], "]"}], "&"}]}], "]"}]}], 
-    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    ";"}], "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Convert", " ", "to", " ", 
      RowBox[{"{", 
-      RowBox[{"Date", ",", "Value"}], "}"}], " ", "pairs"}], "*)"}], "\n", 
+      RowBox[{"Date", ",", "Value"}], "}"}], " ", "pairs"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"compSeriesData", "=", 
      RowBox[{"KeyValueMap", "[", 
@@ -6985,13 +7171,14 @@ Cell[BoxData[
     RowBox[{"2.", " ", "VISUAL", " ", "ELEMENTS", " ", 
      RowBox[{"(", 
       RowBox[{
-       RowBox[{"LEGEND", "&"}], " ", "SHADING"}], ")"}]}], "*)"}], "\n", 
+       RowBox[{"LEGEND", "&"}], " ", "SHADING"}], ")"}]}], "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{
      RowBox[{
      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
        "===", "===", "===", "===", "===", "===", "===", "==="}], "="}], 
-    "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    "*)"}], "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{
@@ -7012,14 +7199,15 @@ Cell[BoxData[
          RowBox[{"0.5", ",", "0", ",", "0.5", ",", "0.15"}], "]"}]}]}], 
       "|>"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
-    RowBox[{"Create", " ", "Shading", " ", "Rectangles"}], "*)"}], "\n", 
+    RowBox[{"Create", " ", "Shading", " ", "Rectangles"}], "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"FIX", ":", 
      RowBox[{
       RowBox[{"Using", "'"}], 
       RowBox[{"Scaled", "'"}], " ", "for", " ", "Y", " ", "coordinates", " ", 
       "to", " ", "guarantee", " ", "full", " ", "height", " ", "coverage"}]}],
-     "*)"}], "\[IndentingNewLine]", 
+     "*)"}], "\n", 
    RowBox[{
     RowBox[{"eraRects", "=", 
      RowBox[{"{", 
@@ -7078,7 +7266,7 @@ Cell[BoxData[
               RowBox[{"{", 
                RowBox[{"2025", ",", "12", ",", "1"}], "}"}], "]"}], ",", 
              RowBox[{"Scaled", "[", "1", "]"}]}], "}"}]}], "]"}]}], "}"}]}], 
-      "}"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+      "}"}]}], ";"}], "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
     RowBox[{"2.", " ", "Define", " ", "Peak", " ", "Milestones", " ", 
      RowBox[{"(", 
@@ -7115,8 +7303,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"{", 
          RowBox[{"2025", ",", "1"}], "}"}], 
-        "->", "\"\<Jan 2025\\nMassive\\nSpike\>\""}]}], "|>"}]}], ";"}], "\n",
-    "\[IndentingNewLine]", 
+        "->", "\"\<Jan 2025\\nMassive\\nSpike\>\""}]}], "|>"}]}], ";"}], 
+   "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
     RowBox[{
     "Create", " ", "Framed", " ", "Text", " ", "Labels", " ", "on", " ", 
@@ -7194,10 +7382,9 @@ Cell[BoxData[
      RowBox[{
      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
        "===", "===", "===", "===", "===", "===", "===", "==="}], "="}], 
-    "*)"}], "\n", 
+    "*)"}], "\[IndentingNewLine]", 
    RowBox[{"(*", 
-    RowBox[{"3.", " ", "GENERATE", " ", "PLOT"}], "*)"}], 
-   "\[IndentingNewLine]", 
+    RowBox[{"3.", " ", "GENERATE", " ", "PLOT"}], "*)"}], "\n", 
    RowBox[{"(*", " ", 
     RowBox[{
      RowBox[{
@@ -8008,97 +8195,13 @@ Q42w85f+8kX/A+R6zBs=
    3.974222080469372*^9},
  CellLabel->
   "Out[589]=",ExpressionUUID->"6c3fe689-ddc6-4f3d-a3c3-18113010344e"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{"\[IndentingNewLine]", 
-  RowBox[{"DateListPlot", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{"dcSeriesData", ",", "compSeriesData"}], "}"}], ",", 
-    RowBox[{"(*", 
-     RowBox[{"Line", " ", "Styles"}], "*)"}], 
-    RowBox[{"PlotStyle", "->", 
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"Directive", "[", 
-        RowBox[{
-         RowBox[{"RGBColor", "[", 
-          RowBox[{"0.85", ",", "0.3", ",", "0.1"}], "]"}], ",", 
-         RowBox[{"Thickness", "[", "0.0015", "]"}]}], "]"}], ",", 
-       RowBox[{"(*", 
-        RowBox[{"Thin", " ", "Red", " ", "DC", " ", "Line"}], "*)"}], 
-       RowBox[{"Directive", "[", 
-        RowBox[{
-         RowBox[{"RGBColor", "[", 
-          RowBox[{"0.2", ",", "0.45", ",", "0.7"}], "]"}], ",", 
-         RowBox[{"Thickness", "[", "0.002", "]"}], ",", "Dashed"}], "]"}]}], 
-      " ", 
-      RowBox[{"(*", 
-       RowBox[{"Blue", " ", "Comparison", " ", "Line"}], "*)"}], "}"}]}], ",", 
-    RowBox[{"(*", "Labels", "*)"}], 
-    RowBox[{"PlotLabel", "->", 
-     RowBox[{"Style", "[", 
-      RowBox[{"\"\<Data Center (95605) Energy Usage: AI Industry Milestones\>\
-\"", ",", "18", ",", "Bold", ",", "Black"}], "]"}]}], ",", 
-    RowBox[{"FrameLabel", "->", 
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"Style", "[", 
-        RowBox[{"\"\<Date\>\"", ",", "12"}], "]"}], ",", 
-       RowBox[{"Style", "[", 
-        RowBox[{"\"\<Energy Usage (kWh)\>\"", ",", "12"}], "]"}]}], "}"}]}], ",", 
-    RowBox[{"(*", 
-     RowBox[{"Legend", ":", 
-      RowBox[{
-       RowBox[{"Data", " ", "Lines"}], "+", "Eras"}]}], "*)"}], 
-    RowBox[{"PlotLegends", "->", 
-     RowBox[{"Placed", "[", 
-      RowBox[{
-       RowBox[{"SwatchLegend", "[", 
-        RowBox[{
-         RowBox[{"{", 
-          
-          RowBox[{"\"\<Data Center (95605) - Corrected\>\"", 
-           ",", "\"\<Comparison Avg\>\"", ",", "\"\<Construction Phase\>\"", 
-           ",", "\"\<GPT-4 Training Era\>\"", 
-           ",", "\"\<Multi-Modal Era\>\""}], "}"}], ",", 
-         RowBox[{"LegendLayout", "->", "\"\<Row\>\""}], ",", 
-         RowBox[{"LegendMarkerSize", "->", 
-          RowBox[{"{", 
-           RowBox[{"30", ",", "10"}], "}"}]}]}], "]"}], ",", "Below"}], 
-      "]"}]}], ",", 
-    RowBox[{"(*", 
-     RowBox[{"Graphics", " ", "Overlay"}], "*)"}], 
-    RowBox[{"Prolog", "->", "eraRects"}], ",", 
-    RowBox[{"(*", 
-     RowBox[{"Shading", " ", "goes", " ", "BEHIND", " ", "data"}], "*)"}], 
-    RowBox[{"Epilog", "->", "milestoneLabels"}], ",", 
-    RowBox[{"(*", 
-     RowBox[{
-     "Labels", " ", "go", " ", "ON", " ", "TOP", " ", "of", " ", "data"}], 
-     "*)"}], 
-    RowBox[{"(*", "Formatting", "*)"}], 
-    RowBox[{"ImageSize", "->", "1000"}], ",", 
-    RowBox[{"AspectRatio", "->", 
-     RowBox[{"1", "/", "3.5"}]}], ",", 
-    RowBox[{"Frame", "->", "True"}], ",", 
-    RowBox[{"GridLines", "->", 
-     RowBox[{"{", 
-      RowBox[{"Automatic", ",", "Automatic"}], "}"}]}], ",", 
-    RowBox[{"PlotRangePadding", "->", 
-     RowBox[{"{", 
-      RowBox[{"Automatic", ",", 
-       RowBox[{"Scaled", "[", "0.15", "]"}]}], "}"}]}]}], "]"}]}]], "Input",
- CellChangeTimes->{
-  3.9744047686485367`*^9},ExpressionUUID->"4b7c3c87-c759-431d-a140-\
-f17d6aadf6bd"]
+}, Open  ]]
 },
 WindowSize->{1215, 911},
-WindowMargins->{{72, Automatic}, {51, Automatic}},
+WindowMargins->{{72, Automatic}, {15, Automatic}},
 FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
-ExpressionUUID->"85b080f4-7fdc-466a-a49b-85daef8c8b94"
+ExpressionUUID->"e42a842e-7967-4181-bf81-756af5dec596"
 ]
 (* End of Notebook Content *)
 
@@ -8117,20 +8220,19 @@ Cell[942, 29, 301, 4, 33, "Output",ExpressionUUID->"07bb089c-948e-4233-9131-1847
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1280, 38, 80016, 1541, 268, "Input",ExpressionUUID->"1478be25-4fb1-4921-b0a0-7480eff3ef24"],
-Cell[81299, 1581, 164935, 3226, 638, "Output",ExpressionUUID->"94b62b30-d723-4d64-8214-688c3061fcde"],
-Cell[246237, 4809, 84343, 1616, 217, "Output",ExpressionUUID->"cccff11c-819a-4416-957e-dd7e0b7c851d"]
+Cell[81299, 1581, 164947, 3226, 638, "Output",ExpressionUUID->"94b62b30-d723-4d64-8214-688c3061fcde"],
+Cell[246249, 4809, 84201, 1613, 217, "Output",ExpressionUUID->"cccff11c-819a-4416-957e-dd7e0b7c851d"]
 }, Open  ]],
-Cell[330595, 6428, 70, 0, 151, "Input",ExpressionUUID->"d42863b3-951f-4aa1-8f9e-733a0d88ed26"],
-Cell[330668, 6430, 70, 0, 90, "Input",ExpressionUUID->"37f2cea6-59d3-4343-95e5-1a9178edf0c0"],
-Cell[330741, 6432, 70, 0, 356, "Input",ExpressionUUID->"ab74ddd0-dc6b-449b-ac88-eb5499bc09fc"],
-Cell[330814, 6434, 12476, 272, 785, "Input",ExpressionUUID->"19233d15-211b-44cb-a1db-efaa461dc82f"],
-Cell[343293, 6708, 2980, 68, 192, "Input",ExpressionUUID->"670f004b-3d51-447a-8204-c2cbe5470029"],
-Cell[346276, 6778, 735, 19, 90, "Input",ExpressionUUID->"bb2c6f81-e0d9-4098-9e9e-398d5c2a09bc"],
+Cell[330465, 6425, 1716, 44, 151, "Input",ExpressionUUID->"d42863b3-951f-4aa1-8f9e-733a0d88ed26"],
+Cell[332184, 6471, 912, 22, 90, "Input",ExpressionUUID->"37f2cea6-59d3-4343-95e5-1a9178edf0c0"],
+Cell[333099, 6495, 5048, 123, 356, "Input",ExpressionUUID->"ab74ddd0-dc6b-449b-ac88-eb5499bc09fc"],
+Cell[338150, 6620, 12476, 272, 785, "Input",ExpressionUUID->"19233d15-211b-44cb-a1db-efaa461dc82f"],
+Cell[350629, 6894, 2980, 68, 192, "Input",ExpressionUUID->"670f004b-3d51-447a-8204-c2cbe5470029"],
+Cell[353612, 6964, 735, 19, 90, "Input",ExpressionUUID->"bb2c6f81-e0d9-4098-9e9e-398d5c2a09bc"],
 Cell[CellGroupData[{
-Cell[347036, 6801, 19182, 497, 1418, "Input",ExpressionUUID->"984778a6-acd6-41d8-944d-883626f260db"],
-Cell[366221, 7300, 33417, 709, 372, "Output",ExpressionUUID->"6c3fe689-ddc6-4f3d-a3c3-18113010344e"]
-}, Open  ]],
-Cell[399653, 8012, 3209, 82, 233, "Input",ExpressionUUID->"4b7c3c87-c759-431d-a140-f17d6aadf6bd"]
+Cell[354372, 6987, 19186, 498, 1418, "Input",ExpressionUUID->"984778a6-acd6-41d8-944d-883626f260db"],
+Cell[373561, 7487, 33417, 709, 391, "Output",ExpressionUUID->"6c3fe689-ddc6-4f3d-a3c3-18113010344e"]
+}, Open  ]]
 }
 ]
 *)
