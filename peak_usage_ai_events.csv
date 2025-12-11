@@ -1,0 +1,8 @@
+Date,PeakUsage_kWh,Category,AI_Event,Description
+2017-02-01,155301218,Infrastructure,Data Center Construction Peak,Initial infrastructure build-out for large-scale data center operations. Major hardware installation and facility expansion phase.
+2023-02-01,201425151,Model Training,GPT-4 Final Training & Bing AI Integration,ABSOLUTE PEAK - Final training phase of GPT-4 (trillion+ parameters) combined with Microsoft Bing AI integration. Massive computational requirements for training runs.
+2023-04-01,177479890,Inference Scale-Up,GPT-4 Public Launch,Initial public release of GPT-4 to ChatGPT Plus subscribers. Massive inference workload as millions of users access the new model simultaneously.
+2023-10-01,93000971,Sustained Operations,GPT-4 Widespread Adoption,"Sustained high usage from widespread GPT-4 adoption across enterprise customers, API integrations, and growing ChatGPT user base."
+2024-09-01,87638185,Multi-Modal AI,Vision + Audio AI Integration,Launch of multi-modal capabilities including vision (image analysis) and audio processing. Requires additional computational resources for processing multiple data types.
+2024-11-01,112349180,User Growth,ChatGPT Plus Subscription Boom,Massive growth in ChatGPT Plus subscriptions driving increased inference demand. More users accessing premium GPT-4 models.
+2025-01-01,120700504,New Model Training,Massive January Spike (Likely New Model),Significant spike suggesting potential new model training or major infrastructure upgrade. Pattern consistent with previous major model releases.
