@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    351532,       7510]
-NotebookOptionsPosition[    347694,       7442]
-NotebookOutlinePosition[    348085,       7458]
-CellTagsIndexPosition[    348042,       7455]
+NotebookDataLength[    348439,       7444]
+NotebookOptionsPosition[    345193,       7382]
+NotebookOutlinePosition[    345584,       7398]
+CellTagsIndexPosition[    345541,       7395]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3851,10 +3851,7 @@ Cell[BoxData[
      "HEADER", " ", 
      RowBox[{"SANITIZATION", "--"}]}], "-"}], "*)"}], 
   RowBox[{"(*", 
-   RowBox[{
-   "Import", " ", "raw", " ", "data", " ", "as", " ", "simple", " ", "text", " ",
-     "lists", " ", "DIRECTLY", " ", "FROM", " ", "GITHUB", " ", "TO", " ", 
-    "FIX", " ", "FILE", " ", "NOT", " ", "FOUND", " ", "ERRORS"}], "*)"}], 
+   RowBox[{"Import", " ", "raw", " ", "data"}], "*)"}], 
   RowBox[{
    RowBox[{
     RowBox[{"rawComp", "=", 
@@ -3869,12 +3866,7 @@ Project/master/data_center_comparison.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
 Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}], 
     ";"}], "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
-    RowBox[{
-     RowBox[{"Helper", " ", "to", " ", "clean", " ", 
-      RowBox[{"headers", ":", 
-       RowBox[{"Removes", " ", "invisible", " ", "BOM", " ", "markers"}]}]}], 
-     ",", "spaces", ",", 
-     RowBox[{"and", " ", "casing"}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"Helper", " ", "to", " ", "clean", " ", "headers"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"CleanHeader", "[", "h_", "]"}], ":=", 
@@ -3885,11 +3877,17 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
         RowBox[{"Except", "[", "WordCharacter", "]"}]}], "]"}], "]"}]}], 
     ";"}], "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
-    RowBox[{"Get", " ", "Headers", " ", "and", " ", "Rows"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"FIX", " ", "1"}], ":", 
+     RowBox[{
+     "Flatten", " ", "headers", " ", "to", " ", "ensure", " ", "it", " ", 
+      "is", " ", "a", " ", "simple", " ", "list", " ", "of", " ", 
+      "strings"}]}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"headers", "=", 
-     RowBox[{"CleanHeader", "/@", 
-      RowBox[{"First", "[", "rawComp", "]"}]}]}], ";"}], "\n", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"CleanHeader", "/@", 
+       RowBox[{"First", "[", "rawComp", "]"}]}], "]"}]}], ";"}], "\n", 
    RowBox[{
     RowBox[{"dataRows", "=", 
      RowBox[{"Rest", "[", "rawComp", "]"}]}], ";"}], "\[IndentingNewLine]", 
@@ -3902,10 +3900,10 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
       RowBox[{"MAPPING", "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
-     RowBox[{
-     "Find", " ", "exactly", " ", "where", " ", "the", " ", "columns", " ", 
-      "are"}], ",", 
-     RowBox[{"regardless", " ", "of", " ", "order"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"FIX", " ", "2"}], ":", 
+     RowBox[{"Added", " ", 
+      RowBox[{"ToString", "[", "h", "]"}], " ", "inside", " ", 
+      "StringContainsQ", " ", "for", " ", "safety"}]}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"colDate", "=", 
      RowBox[{"First", "[", 
@@ -3913,8 +3911,9 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
        RowBox[{"headers", ",", 
         RowBox[{"h_", "/;", 
          RowBox[{"StringContainsQ", "[", 
-          RowBox[{"h", ",", "\"\<DATE\>\""}], "]"}]}]}], "]"}], "]"}]}], 
-    ";"}], "\n", 
+          RowBox[{
+           RowBox[{"ToString", "[", "h", "]"}], ",", "\"\<DATE\>\""}], 
+          "]"}]}]}], "]"}], "]"}]}], ";"}], "\n", 
    RowBox[{
     RowBox[{"colZip", "=", 
      RowBox[{"First", "[", 
@@ -3922,8 +3921,9 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
        RowBox[{"headers", ",", 
         RowBox[{"h_", "/;", 
          RowBox[{"StringContainsQ", "[", 
-          RowBox[{"h", ",", "\"\<ZIP\>\""}], "]"}]}]}], "]"}], "]"}]}], ";"}],
-    "\n", 
+          RowBox[{
+           RowBox[{"ToString", "[", "h", "]"}], ",", "\"\<ZIP\>\""}], 
+          "]"}]}]}], "]"}], "]"}]}], ";"}], "\n", 
    RowBox[{
     RowBox[{"colUsage", "=", 
      RowBox[{"First", "[", 
@@ -3931,23 +3931,20 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
        RowBox[{"headers", ",", 
         RowBox[{"h_", "/;", 
          RowBox[{"StringContainsQ", "[", 
-          RowBox[{"h", ",", "\"\<USAGE\>\""}], "]"}]}]}], "]"}], "]"}]}], 
-    ";"}], "\[IndentingNewLine]", "\n", 
+          RowBox[{
+           RowBox[{"ToString", "[", "h", "]"}], ",", "\"\<USAGE\>\""}], 
+          "]"}]}]}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", "\n", 
    RowBox[{
     RowBox[{"Print", "[", 
      RowBox[{"\"\<Mapped Columns: Date->\>\"", ",", "colDate", 
       ",", "\"\< | Zip->\>\"", ",", "colZip", ",", "\"\< | Usage->\>\"", ",", 
-      "colUsage"}], "]"}], ";"}], "\[IndentingNewLine]", "\n", 
+      "colUsage"}], "]"}], ";"}], "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{
       RowBox[{"--", 
        RowBox[{"-", "3."}]}], " ", "DATA", " ", 
       RowBox[{"PROCESSING", "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "Helper", " ", "to", " ", "force", " ", "string", " ", "to", " ", 
-     "number"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"CleanNum", "[", "x_", "]"}], ":=", 
@@ -3963,15 +3960,9 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
      RowBox[{"{", "}"}]}], ";"}], "\n", 
    RowBox[{
     RowBox[{"baseData", "=", 
-     RowBox[{"{", "}"}]}], ";"}], "\n", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "Loop", " ", "through", " ", "rows", " ", "and", " ", "sort", " ", "data",
-      " ", "manually"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", "\n", 
    RowBox[{
     RowBox[{"Do", "[", 
-     RowBox[{"(*", 
-      RowBox[{"1.", " ", "Extract", " ", "Raw", " ", "Text"}], "*)"}], 
      RowBox[{
       RowBox[{
        RowBox[{"rDate", "=", 
@@ -3986,21 +3977,12 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
         RowBox[{"row", "[", 
          RowBox[{"[", "colUsage", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
        
-       RowBox[{"(*", 
-        RowBox[{"2.", " ", "Convert", " ", "Types"}], "*)"}], 
        RowBox[{"dateObj", "=", 
         RowBox[{"DateObject", "[", "rDate", "]"}]}], ";", 
        "\[IndentingNewLine]", 
        RowBox[{"valNum", "=", 
         RowBox[{"CleanNum", "[", "rUsage", "]"}]}], ";", 
        "\[IndentingNewLine]", 
-       RowBox[{"(*", 
-        RowBox[{"3.", " ", "Sort", " ", "into", " ", "Series"}], "*)"}], 
-       RowBox[{"(*", 
-        RowBox[{
-        "We", " ", "look", " ", "for", " ", "\"\<95113\>\"", " ", "inside", " ",
-          "the", " ", "zip", " ", "string", " ", "to", " ", "handle", 
-         " ", "\"\<95113.0\>\"", " ", "or", " ", "\"\<95113 \>\""}], "*)"}], 
        RowBox[{"If", "[", 
         RowBox[{
          RowBox[{"StringContainsQ", "[", 
@@ -4020,10 +4002,8 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
             RowBox[{"dateObj", ",", "valNum"}], "}"}]}], "]"}]}], "]"}], 
        ";"}], ",", 
       RowBox[{"{", 
-       RowBox[{"row", ",", "dataRows"}], "}"}]}], "]"}], ";"}], "\n", 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Sort", " ", "by", " ", "Date"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"row", ",", "dataRows"}], "}"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\n", 
    RowBox[{
     RowBox[{"dcData", "=", 
      RowBox[{"SortBy", "[", 
@@ -4044,12 +4024,15 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
     RowBox[{
      RowBox[{
       RowBox[{"--", 
-       RowBox[{"-", "4."}]}], " ", "MILESTONE", " ", 
-      RowBox[{"PROCESSING", "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"-", "4."}]}], " ", "MILESTONE", " ", "PROCESSING", " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"ADAPTED", " ", "STYLE"}], ")"}], "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"peakHeaders", "=", 
-     RowBox[{"CleanHeader", "/@", 
-      RowBox[{"First", "[", "rawPeak", "]"}]}]}], ";"}], "\n", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"CleanHeader", "/@", 
+       RowBox[{"First", "[", "rawPeak", "]"}]}], "]"}]}], ";"}], "\n", 
    RowBox[{
     RowBox[{"peakRows", "=", 
      RowBox[{"Rest", "[", "rawPeak", "]"}]}], ";"}], "\[IndentingNewLine]", "\n", 
@@ -4060,8 +4043,9 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
        RowBox[{"peakHeaders", ",", 
         RowBox[{"h_", "/;", 
          RowBox[{"StringContainsQ", "[", 
-          RowBox[{"h", ",", "\"\<DATE\>\""}], "]"}]}]}], "]"}], "]"}]}], 
-    ";"}], "\n", 
+          RowBox[{
+           RowBox[{"ToString", "[", "h", "]"}], ",", "\"\<DATE\>\""}], 
+          "]"}]}]}], "]"}], "]"}]}], ";"}], "\n", 
    RowBox[{
     RowBox[{"pColVal", "=", 
      RowBox[{"First", "[", 
@@ -4069,8 +4053,9 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
        RowBox[{"peakHeaders", ",", 
         RowBox[{"h_", "/;", 
          RowBox[{"StringContainsQ", "[", 
-          RowBox[{"h", ",", "\"\<PEAK\>\""}], "]"}]}]}], "]"}], "]"}]}], 
-    ";"}], "\n", 
+          RowBox[{
+           RowBox[{"ToString", "[", "h", "]"}], ",", "\"\<PEAK\>\""}], 
+          "]"}]}]}], "]"}], "]"}]}], ";"}], "\n", 
    RowBox[{
     RowBox[{"pColEvent", "=", 
      RowBox[{"First", "[", 
@@ -4078,8 +4063,16 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
        RowBox[{"peakHeaders", ",", 
         RowBox[{"h_", "/;", 
          RowBox[{"StringContainsQ", "[", 
-          RowBox[{"h", ",", "\"\<EVENT\>\""}], "]"}]}]}], "]"}], "]"}]}], 
-    ";"}], "\[IndentingNewLine]", "\n", 
+          RowBox[{
+           RowBox[{"ToString", "[", "h", "]"}], ",", "\"\<EVENT\>\""}], 
+          "]"}]}]}], "]"}], "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"STYLE", " ", 
+     RowBox[{"UPDATE", ":", 
+      RowBox[{"Using", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{"Framed", "[", "...", "]"}], "]"}], " ", "similar", " ", "to",
+        " ", "the", " ", "second", " ", "chunk"}]}]}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"milestones", "=", 
      RowBox[{"Table", "[", 
@@ -4100,28 +4093,43 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
             RowBox[{"row", "[", 
              RowBox[{"[", "pColEvent", "]"}], "]"}]}]}], "}"}], ",", 
          RowBox[{"{", 
+          RowBox[{"(*", 
+           RowBox[{"The", " ", "Point", " ", "Marker"}], "*)"}], 
           RowBox[{
            RowBox[{"PointSize", "[", "0.015", "]"}], ",", "Black", ",", 
            RowBox[{"Point", "[", 
             RowBox[{"{", 
              RowBox[{"d", ",", "val"}], "}"}], "]"}], ",", 
-           RowBox[{"Inset", "[", 
+           RowBox[{"(*", 
+            RowBox[{"The", " ", "Styled", " ", "Label"}], "*)"}], 
+           RowBox[{"Text", "[", 
             RowBox[{
              RowBox[{"Framed", "[", 
               RowBox[{
                RowBox[{"Style", "[", 
                 RowBox[{"lbl", ",", "10", ",", 
-                 RowBox[{"FontFamily", "->", "\"\<Arial\>\""}], ",", "Bold"}],
-                 "]"}], ",", 
-               RowBox[{"Background", "->", "White"}], ",", 
-               RowBox[{"FrameStyle", "->", "Gray"}], ",", 
+                 RowBox[{"FontFamily", "->", "\"\<Arial\>\""}], ",", 
+                 "Black"}], "]"}], ",", 
+               RowBox[{"Background", "->", 
+                RowBox[{"RGBColor", "[", 
+                 RowBox[{"1", ",", "1", ",", "1", ",", "0.8"}], "]"}]}], ",", 
+               
+               RowBox[{"(*", 
+                RowBox[{"Semi", "-", 
+                 RowBox[{"transparent", " ", "background"}]}], "*)"}], 
+               RowBox[{"FrameStyle", "->", 
+                RowBox[{"GrayLevel", "[", "0.5", "]"}]}], ",", 
                RowBox[{"RoundingRadius", "->", "3"}]}], "]"}], ",", 
              RowBox[{"{", 
               RowBox[{"d", ",", "val"}], "}"}], ",", 
              RowBox[{"{", 
               RowBox[{"0", ",", 
-               RowBox[{"-", "1.5"}]}], "}"}]}], "]"}]}], "}"}]}], "]"}], ",", 
-       
+               RowBox[{"-", "1.8"}]}], "}"}]}], " ", 
+            RowBox[{"(*", 
+             RowBox[{"Offset", ":", 
+              RowBox[{
+              "Moves", " ", "label", " ", "UP", " ", "above", " ", "the", " ",
+                "point"}]}], "*)"}], "]"}]}], "}"}]}], "]"}], ",", 
        RowBox[{"{", 
         RowBox[{"row", ",", "peakRows"}], "}"}]}], "]"}]}], ";"}], "\n", 
    "\[IndentingNewLine]", 
@@ -4144,7 +4152,14 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
        RowBox[{"\"\<Multi-modal\>\"", "->", 
         RowBox[{"RGBColor", "[", 
          RowBox[{"0.8", ",", "0.6", ",", "0.8", ",", "0.2"}], "]"}]}]}], 
-      "|>"}]}], ";"}], "\[IndentingNewLine]", "\n", 
+      "|>"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"FIX", " ", "3"}], ":", 
+     RowBox[{"Wrapped", " ", "DateObject", " ", "in", " ", 
+      RowBox[{"AbsoluteTime", "[", "]"}], " ", "so", " ", "they", " ", "work",
+       " ", "with", " ", 
+      RowBox[{"Scaled", "[", "]"}]}]}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"eraRects", "=", 
      RowBox[{"{", 
@@ -4157,13 +4172,13 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
           RowBox[{
            RowBox[{"{", 
             RowBox[{
-             RowBox[{"DateObject", "[", 
+             RowBox[{"AbsoluteTime", "[", 
               RowBox[{"{", 
                RowBox[{"2017", ",", "1", ",", "1"}], "}"}], "]"}], ",", 
              RowBox[{"Scaled", "[", "0", "]"}]}], "}"}], ",", 
            RowBox[{"{", 
             RowBox[{
-             RowBox[{"DateObject", "[", 
+             RowBox[{"AbsoluteTime", "[", 
               RowBox[{"{", 
                RowBox[{"2018", ",", "1", ",", "1"}], "}"}], "]"}], ",", 
              RowBox[{"Scaled", "[", "1", "]"}]}], "}"}]}], "]"}]}], "}"}], ",", 
@@ -4175,13 +4190,13 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
           RowBox[{
            RowBox[{"{", 
             RowBox[{
-             RowBox[{"DateObject", "[", 
+             RowBox[{"AbsoluteTime", "[", 
               RowBox[{"{", 
                RowBox[{"2023", ",", "1", ",", "1"}], "}"}], "]"}], ",", 
              RowBox[{"Scaled", "[", "0", "]"}]}], "}"}], ",", 
            RowBox[{"{", 
             RowBox[{
-             RowBox[{"DateObject", "[", 
+             RowBox[{"AbsoluteTime", "[", 
               RowBox[{"{", 
                RowBox[{"2024", ",", "1", ",", "1"}], "}"}], "]"}], ",", 
              RowBox[{"Scaled", "[", "1", "]"}]}], "}"}]}], "]"}]}], "}"}], ",", 
@@ -4193,24 +4208,17 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
           RowBox[{
            RowBox[{"{", 
             RowBox[{
-             RowBox[{"DateObject", "[", 
+             RowBox[{"AbsoluteTime", "[", 
               RowBox[{"{", 
                RowBox[{"2024", ",", "1", ",", "1"}], "}"}], "]"}], ",", 
              RowBox[{"Scaled", "[", "0", "]"}]}], "}"}], ",", 
            RowBox[{"{", 
             RowBox[{
-             RowBox[{"DateObject", "[", 
+             RowBox[{"AbsoluteTime", "[", 
               RowBox[{"{", 
                RowBox[{"2025", ",", "12", ",", "1"}], "}"}], "]"}], ",", 
              RowBox[{"Scaled", "[", "1", "]"}]}], "}"}]}], "]"}]}], "}"}]}], 
-      "}"}]}], ";"}], "\n", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"PLOT", ":", 
-     RowBox[{
-     "Uses", " ", "Log", " ", "Scale", " ", "so", " ", "the", " ", 
-      "residential", " ", "line", " ", 
-      RowBox[{"doesn", "'"}], "t", " ", "look", " ", "like", " ", "zero"}]}], 
-    "*)"}], "\[IndentingNewLine]", 
+      "}"}]}], ";"}], "\[IndentingNewLine]", "\n", 
    RowBox[{"DateListPlot", "[", 
     RowBox[{
      RowBox[{"{", 
@@ -4223,16 +4231,12 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
           RowBox[{"RGBColor", "[", 
            RowBox[{"0.8", ",", "0.2", ",", "0.2"}], "]"}], ",", 
           RowBox[{"Thickness", "[", "0.004", "]"}]}], "]"}], ",", 
-        RowBox[{"(*", 
-         RowBox[{"Red", ":", "DC"}], "*)"}], 
         RowBox[{"Directive", "[", 
          RowBox[{
           RowBox[{"RGBColor", "[", 
            RowBox[{"0.2", ",", "0.6", ",", "0.6"}], "]"}], ",", 
           RowBox[{"Thickness", "[", "0.003", "]"}], ",", "Dashed"}], "]"}]}], 
-       " ", 
-       RowBox[{"(*", 
-        RowBox[{"Teal", ":", "Baseline"}], "*)"}], "}"}]}], ",", 
+       "}"}]}], ",", 
      RowBox[{"PlotLegends", "->", 
       RowBox[{"Placed", "[", 
        RowBox[{
@@ -4257,61 +4261,23 @@ Project/master/peak_usage_ai_events.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}],
      RowBox[{"GridLines", "->", 
       RowBox[{"{", 
        RowBox[{"Automatic", ",", "Automatic"}], "}"}]}], ",", 
-     RowBox[{"Epilog", "->", 
-      RowBox[{"{", 
-       RowBox[{"eraRects", ",", "milestones"}], "}"}]}]}], "]"}]}]}]], "Input",\
-
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"UPDATED", " ", 
+        RowBox[{"LAYERING", ":", 
+         RowBox[{"Shading", " ", "in", " ", "Prolog", " ", 
+          RowBox[{"(", "Back", ")"}]}]}]}], ",", 
+       RowBox[{"Milestones", " ", "in", " ", "Epilog", " ", 
+        RowBox[{"(", "Front", ")"}]}]}], "*)"}], 
+     RowBox[{"Prolog", "->", "eraRects"}], ",", 
+     RowBox[{"Epilog", "->", "milestones"}]}], "]"}]}]}]], "Input",
  CellChangeTimes->{{3.974407695408979*^9, 3.974407695411708*^9}, {
    3.974408110842834*^9, 3.974408111626054*^9}, 3.974408269945204*^9, {
    3.9744084038275948`*^9, 3.974408405390864*^9}, 3.9744173654574337`*^9, 
-   3.9744176712352552`*^9, 3.974418234677953*^9},
+   3.9744176712352552`*^9, 3.974418234677953*^9, 3.974476618247629*^9, 
+   3.974478056844358*^9},
  CellLabel->
-  "In[204]:=",ExpressionUUID->"5ce00b6d-3fcd-4145-aaf1-24fc317ccf6d"],
-
-Cell[BoxData[
- TemplateBox[{
-  "StringContainsQ", "strse", 
-   "\"A string or list of strings is expected at position \\!\\(\\*RowBox[{\\\
-\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"StringContainsQ\\\", \\\"[\\\", RowBox[{\
-\\\"List\\\", \\\",\\\", \\\"\\\\\\\"DATE\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"", 
-   2, 209, 192, 28423569805314220053, "Local"},
-  "MessageTemplate",
-  BaseStyle->"MSG"]], "Message",
- CellChangeTimes->{3.9744174117829227`*^9, 3.974417533336278*^9, 
-  3.9744182364070253`*^9},
- CellLabel->
-  "During evaluation of \
-In[204]:=",ExpressionUUID->"a65cacf1-fdbb-466a-9358-883b930567f6"],
-
-Cell[BoxData[
- TemplateBox[{
-  "StringContainsQ", "strse", 
-   "\"A string or list of strings is expected at position \\!\\(\\*RowBox[{\\\
-\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"StringContainsQ\\\", \\\"[\\\", RowBox[{\
-\\\"List\\\", \\\",\\\", \\\"\\\\\\\"ZIP\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"", 2,
-    210, 193, 28423569805314220053, "Local"},
-  "MessageTemplate",
-  BaseStyle->"MSG"]], "Message",
- CellChangeTimes->{3.9744174117829227`*^9, 3.974417533336278*^9, 
-  3.974418236409604*^9},
- CellLabel->
-  "During evaluation of \
-In[204]:=",ExpressionUUID->"e6a43e14-0775-4c67-9ca6-8f5840305a0c"],
-
-Cell[BoxData[
- TemplateBox[{
-  "StringContainsQ", "strse", 
-   "\"A string or list of strings is expected at position \\!\\(\\*RowBox[{\\\
-\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"StringContainsQ\\\", \\\"[\\\", RowBox[{\
-\\\"List\\\", \\\",\\\", \\\"\\\\\\\"USAGE\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"", 
-   2, 211, 194, 28423569805314220053, "Local"},
-  "MessageTemplate",
-  BaseStyle->"MSG"]], "Message",
- CellChangeTimes->{3.9744174117829227`*^9, 3.974417533336278*^9, 
-  3.974418236411126*^9},
- CellLabel->
-  "During evaluation of \
-In[204]:=",ExpressionUUID->"fb6747d6-fabc-4875-9b46-053f07271c07"],
+  "In[520]:=",ExpressionUUID->"5ce00b6d-3fcd-4145-aaf1-24fc317ccf6d"],
 
 Cell[CellGroupData[{
 
@@ -4323,10 +4289,10 @@ Cell[BoxData[
   SequenceForm["Mapped Columns: Date->", 2, " | Zip->", 1, " | Usage->", 3],
   Editable->False]], "Print",
  CellChangeTimes->{3.974417411842072*^9, 3.9744175333455276`*^9, 
-  3.974418236412527*^9},
+  3.974418236412527*^9, 3.974476621161935*^9, 3.974478059610265*^9},
  CellLabel->
   "During evaluation of \
-In[204]:=",ExpressionUUID->"7254ff70-5060-4972-8a65-80f7b596362d"],
+In[520]:=",ExpressionUUID->"d0c8b57d-a481-4728-bd44-17b66ef96355"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -4337,56 +4303,11 @@ Cell[BoxData[
   "Rows Loaded: Data Center (95113) -> ", 111, " | Baseline (95045) -> ", 111],
   Editable->False]], "Print",
  CellChangeTimes->{3.974417411842072*^9, 3.9744175333455276`*^9, 
-  3.974418236415032*^9},
+  3.974418236412527*^9, 3.974476621161935*^9, 3.974478059633856*^9},
  CellLabel->
   "During evaluation of \
-In[204]:=",ExpressionUUID->"a4305028-26b9-40ef-a5ad-81d15240db4e"]
+In[520]:=",ExpressionUUID->"abc419f8-e13d-446e-8040-780cb05a4c44"]
 }, Open  ]],
-
-Cell[BoxData[
- TemplateBox[{
-  "StringContainsQ", "strse", 
-   "\"A string or list of strings is expected at position \\!\\(\\*RowBox[{\\\
-\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"StringContainsQ\\\", \\\"[\\\", RowBox[{\
-\\\"List\\\", \\\",\\\", \\\"\\\\\\\"DATE\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"", 
-   2, 222, 195, 28423569805314220053, "Local"},
-  "MessageTemplate",
-  BaseStyle->"MSG"]], "Message",
- CellChangeTimes->{3.9744174117829227`*^9, 3.974417533336278*^9, 
-  3.9744182364155827`*^9},
- CellLabel->
-  "During evaluation of \
-In[204]:=",ExpressionUUID->"cace2736-c512-4982-a0af-1f4dbf2126c2"],
-
-Cell[BoxData[
- TemplateBox[{
-  "StringContainsQ", "strse", 
-   "\"A string or list of strings is expected at position \\!\\(\\*RowBox[{\\\
-\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"StringContainsQ\\\", \\\"[\\\", RowBox[{\
-\\\"List\\\", \\\",\\\", \\\"\\\\\\\"PEAK\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"", 
-   2, 223, 196, 28423569805314220053, "Local"},
-  "MessageTemplate",
-  BaseStyle->"MSG"]], "Message",
- CellChangeTimes->{3.9744174117829227`*^9, 3.974417533336278*^9, 
-  3.9744182364174128`*^9},
- CellLabel->
-  "During evaluation of \
-In[204]:=",ExpressionUUID->"0ee393a1-81a4-48a1-abfb-9d33c9485ebd"],
-
-Cell[BoxData[
- TemplateBox[{
-  "StringContainsQ", "strse", 
-   "\"A string or list of strings is expected at position \\!\\(\\*RowBox[{\\\
-\"1\\\"}]\\) in \\!\\(\\*RowBox[{\\\"StringContainsQ\\\", \\\"[\\\", RowBox[{\
-\\\"List\\\", \\\",\\\", \\\"\\\\\\\"EVENT\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"", 
-   2, 224, 197, 28423569805314220053, "Local"},
-  "MessageTemplate",
-  BaseStyle->"MSG"]], "Message",
- CellChangeTimes->{3.9744174117829227`*^9, 3.974417533336278*^9, 
-  3.97441823641887*^9},
- CellLabel->
-  "During evaluation of \
-In[204]:=",ExpressionUUID->"aa6208a9-bb30-45d7-b95a-d90844041e0b"],
 
 Cell[BoxData[
  TemplateBox[{
@@ -4738,115 +4659,120 @@ IOK0I7cU9ZcbMxnk/6T6ZKnw/pxQMDj4sMLeFd8L029KBka934p2nJ/08m0M
     NCache[GoldenRatio^(-1), 0.6180339887498948], Axes -> {False, False}, 
     AxesLabel -> {None, None}, AxesOrigin -> {3.67632*^9, 3.463986965631367}, 
     DefaultBaseStyle -> {"PlotGraphics", "Graphics"}, DisplayFunction -> 
-    Identity, Epilog -> {{{
-        EdgeForm[None], 
-        RGBColor[1, 0.9, 0.6, 0.3], 
-        RectangleBox[{
-          DateObject[{2017, 1, 1}, "Day"], 
-          Scaled[0]}, {
-          DateObject[{2018, 1, 1}, "Day"], 
-          Scaled[1]}]}, {
-        EdgeForm[None], 
-        RGBColor[1, 0.6, 0.6, 0.2], 
-        RectangleBox[{
-          DateObject[{2023, 1, 1}, "Day"], 
-          Scaled[0]}, {
-          DateObject[{2024, 1, 1}, "Day"], 
-          Scaled[1]}]}, {
-        EdgeForm[None], 
-        RGBColor[0.8, 0.6, 0.8, 0.2], 
-        RectangleBox[{
-          DateObject[{2024, 1, 1}, "Day"], 
-          Scaled[0]}, {
-          DateObject[{2025, 12, 1}, "Day"], 
-          Scaled[1]}]}}, {{
-        PointSize[0.015], 
-        GrayLevel[0], 
-        PointBox[{3.694896*^9, 155301218}], 
-        InsetBox[
-         BoxData[
-          FormBox[
-           FrameBox[
-            StyleBox[
-            "\"Data Center Construction Peak\"", 10, FontFamily -> "Arial", 
-             Bold, StripOnInput -> False], Background -> GrayLevel[1], 
-            FrameStyle -> GrayLevel[0.5], RoundingRadius -> 3, StripOnInput -> 
-            False], TraditionalForm]], {3.694896*^9, 155301218}, {0, -1.5}]}, {
-        PointSize[0.015], 
-        GrayLevel[0], 
-        PointBox[{3.8841984*^9, 201425151}], 
-        InsetBox[
-         BoxData[
-          FormBox[
-           FrameBox[
-            StyleBox[
-            "\"GPT-4 Final Training & Bing AI Integration\"", 10, FontFamily -> 
-             "Arial", Bold, StripOnInput -> False], Background -> 
-            GrayLevel[1], FrameStyle -> GrayLevel[0.5], RoundingRadius -> 3, 
-            StripOnInput -> False], TraditionalForm]], {
-         3.8841984*^9, 201425151}, {0, -1.5}]}, {
-        PointSize[0.015], 
-        GrayLevel[0], 
-        PointBox[{3.889296*^9, 177479890}], 
-        InsetBox[
-         BoxData[
-          FormBox[
-           FrameBox[
-            StyleBox[
-            "\"GPT-4 Public Launch\"", 10, FontFamily -> "Arial", Bold, 
-             StripOnInput -> False], Background -> GrayLevel[1], FrameStyle -> 
-            GrayLevel[0.5], RoundingRadius -> 3, StripOnInput -> False], 
-           TraditionalForm]], {3.889296*^9, 177479890}, {0, -1.5}]}, {
-        PointSize[0.015], 
-        GrayLevel[0], 
-        PointBox[{3.9051072*^9, 93000971}], 
-        InsetBox[
-         BoxData[
-          FormBox[
-           FrameBox[
-            StyleBox[
-            "\"GPT-4 Widespread Adoption\"", 10, FontFamily -> "Arial", Bold, 
-             StripOnInput -> False], Background -> GrayLevel[1], FrameStyle -> 
-            GrayLevel[0.5], RoundingRadius -> 3, StripOnInput -> False], 
-           TraditionalForm]], {3.9051072*^9, 93000971}, {0, -1.5}]}, {
-        PointSize[0.015], 
-        GrayLevel[0], 
-        PointBox[{3.9341376*^9, 87638185}], 
-        InsetBox[
-         BoxData[
-          FormBox[
-           FrameBox[
-            StyleBox[
-            "\"Vision + Audio AI Integration\"", 10, FontFamily -> "Arial", 
-             Bold, StripOnInput -> False], Background -> GrayLevel[1], 
-            FrameStyle -> GrayLevel[0.5], RoundingRadius -> 3, StripOnInput -> 
-            False], TraditionalForm]], {3.9341376*^9, 87638185}, {0, -1.5}]}, {
-        PointSize[0.015], 
-        GrayLevel[0], 
-        PointBox[{3.939408*^9, 112349180}], 
-        InsetBox[
-         BoxData[
-          FormBox[
-           FrameBox[
-            StyleBox[
-            "\"ChatGPT Plus Subscription Boom\"", 10, FontFamily -> "Arial", 
-             Bold, StripOnInput -> False], Background -> GrayLevel[1], 
-            FrameStyle -> GrayLevel[0.5], RoundingRadius -> 3, StripOnInput -> 
-            False], TraditionalForm]], {3.939408*^9, 112349180}, {0, -1.5}]}, {
-        PointSize[0.015], 
-        GrayLevel[0], 
-        PointBox[{3.9446784*^9, 120700504}], 
-        InsetBox[
-         BoxData[
-          FormBox[
-           FrameBox[
-            StyleBox[
-            "\"Massive January Spike (Likely New Model)\"", 10, FontFamily -> 
-             "Arial", Bold, StripOnInput -> False], Background -> 
-            GrayLevel[1], FrameStyle -> GrayLevel[0.5], RoundingRadius -> 3, 
-            StripOnInput -> False], TraditionalForm]], {
-         3.9446784*^9, 120700504}, {0, -1.5}]}}}, 
-    Frame -> {{True, True}, {True, True}}, FrameLabel -> {{
+    Identity, Epilog -> {{
+       PointSize[0.015], 
+       GrayLevel[0], 
+       PointBox[{3.694896*^9, 155301218}], 
+       InsetBox[
+        FormBox[
+         FrameBox[
+          StyleBox[
+          "\"Data Center Construction Peak\"", 10, FontFamily -> "Arial", 
+           GrayLevel[0], StripOnInput -> False], Background -> 
+          RGBColor[1, 1, 1, 0.8], FrameStyle -> GrayLevel[0.5], 
+          RoundingRadius -> 3, StripOnInput -> False], TraditionalForm], {
+        3.694896*^9, 155301218}, 
+        NCache[
+         ImageScaled[{
+           Rational[1, 2], -0.4}], 
+         ImageScaled[{0.5, -0.4}]]]}, {
+       PointSize[0.015], 
+       GrayLevel[0], 
+       PointBox[{3.8841984*^9, 201425151}], 
+       InsetBox[
+        FormBox[
+         FrameBox[
+          StyleBox[
+          "\"GPT-4 Final Training & Bing AI Integration\"", 10, FontFamily -> 
+           "Arial", 
+           GrayLevel[0], StripOnInput -> False], Background -> 
+          RGBColor[1, 1, 1, 0.8], FrameStyle -> GrayLevel[0.5], 
+          RoundingRadius -> 3, StripOnInput -> False], TraditionalForm], {
+        3.8841984*^9, 201425151}, 
+        NCache[
+         ImageScaled[{
+           Rational[1, 2], -0.4}], 
+         ImageScaled[{0.5, -0.4}]]]}, {
+       PointSize[0.015], 
+       GrayLevel[0], 
+       PointBox[{3.889296*^9, 177479890}], 
+       InsetBox[
+        FormBox[
+         FrameBox[
+          StyleBox["\"GPT-4 Public Launch\"", 10, FontFamily -> "Arial", 
+           GrayLevel[0], StripOnInput -> False], Background -> 
+          RGBColor[1, 1, 1, 0.8], FrameStyle -> GrayLevel[0.5], 
+          RoundingRadius -> 3, StripOnInput -> False], TraditionalForm], {
+        3.889296*^9, 177479890}, 
+        NCache[
+         ImageScaled[{
+           Rational[1, 2], -0.4}], 
+         ImageScaled[{0.5, -0.4}]]]}, {
+       PointSize[0.015], 
+       GrayLevel[0], 
+       PointBox[{3.9051072*^9, 93000971}], 
+       InsetBox[
+        FormBox[
+         FrameBox[
+          StyleBox["\"GPT-4 Widespread Adoption\"", 10, FontFamily -> "Arial", 
+           GrayLevel[0], StripOnInput -> False], Background -> 
+          RGBColor[1, 1, 1, 0.8], FrameStyle -> GrayLevel[0.5], 
+          RoundingRadius -> 3, StripOnInput -> False], TraditionalForm], {
+        3.9051072*^9, 93000971}, 
+        NCache[
+         ImageScaled[{
+           Rational[1, 2], -0.4}], 
+         ImageScaled[{0.5, -0.4}]]]}, {
+       PointSize[0.015], 
+       GrayLevel[0], 
+       PointBox[{3.9341376*^9, 87638185}], 
+       InsetBox[
+        FormBox[
+         FrameBox[
+          StyleBox[
+          "\"Vision + Audio AI Integration\"", 10, FontFamily -> "Arial", 
+           GrayLevel[0], StripOnInput -> False], Background -> 
+          RGBColor[1, 1, 1, 0.8], FrameStyle -> GrayLevel[0.5], 
+          RoundingRadius -> 3, StripOnInput -> False], TraditionalForm], {
+        3.9341376*^9, 87638185}, 
+        NCache[
+         ImageScaled[{
+           Rational[1, 2], -0.4}], 
+         ImageScaled[{0.5, -0.4}]]]}, {
+       PointSize[0.015], 
+       GrayLevel[0], 
+       PointBox[{3.939408*^9, 112349180}], 
+       InsetBox[
+        FormBox[
+         FrameBox[
+          StyleBox[
+          "\"ChatGPT Plus Subscription Boom\"", 10, FontFamily -> "Arial", 
+           GrayLevel[0], StripOnInput -> False], Background -> 
+          RGBColor[1, 1, 1, 0.8], FrameStyle -> GrayLevel[0.5], 
+          RoundingRadius -> 3, StripOnInput -> False], TraditionalForm], {
+        3.939408*^9, 112349180}, 
+        NCache[
+         ImageScaled[{
+           Rational[1, 2], -0.4}], 
+         ImageScaled[{0.5, -0.4}]]]}, {
+       PointSize[0.015], 
+       GrayLevel[0], 
+       PointBox[{3.9446784*^9, 120700504}], 
+       InsetBox[
+        FormBox[
+         FrameBox[
+          StyleBox[
+          "\"Massive January Spike (Likely New Model)\"", 10, FontFamily -> 
+           "Arial", 
+           GrayLevel[0], StripOnInput -> False], Background -> 
+          RGBColor[1, 1, 1, 0.8], FrameStyle -> GrayLevel[0.5], 
+          RoundingRadius -> 3, StripOnInput -> False], TraditionalForm], {
+        3.9446784*^9, 120700504}, 
+        NCache[
+         ImageScaled[{
+           Rational[1, 2], -0.4}], 
+         ImageScaled[{0.5, -0.4}]]]}}, Frame -> {{True, True}, {True, True}}, 
+    FrameLabel -> {{
        FormBox[
         TagBox["\"Monthly Energy Usage (kWh)\"", HoldForm], TraditionalForm], 
        None}, {None, None}}, FrameTicks -> {{
@@ -4958,7 +4884,22 @@ IOK0I7cU9ZcbMxnk/6T6ZKnw/pxQMDj4sMLeFd8L029KBka934p2nJ/08m0M
        Scaled[0.02], 
        Scaled[0.02]}, {
        Scaled[0.02], 
-       Scaled[0.05]}}, Ticks -> {{}, 
+       Scaled[0.05]}}, Prolog -> {{
+       EdgeForm[None], 
+       RGBColor[1, 0.9, 0.6, 0.3], 
+       RectangleBox[{3692217600, 
+         Scaled[0]}, {3723753600, 
+         Scaled[1]}]}, {
+       EdgeForm[None], 
+       RGBColor[1, 0.6, 0.6, 0.2], 
+       RectangleBox[{3881520000, 
+         Scaled[0]}, {3913056000, 
+         Scaled[1]}]}, {
+       EdgeForm[None], 
+       RGBColor[0.8, 0.6, 0.8, 0.2], 
+       RectangleBox[{3913056000, 
+         Scaled[0]}, {3973536000, 
+         Scaled[1]}]}}, Ticks -> {{}, 
       Charting`ScaledTicks[
       "Log", {Log, Exp}, "Nice", WorkingPrecision -> 15.954589770191003`, 
        RotateLabel -> 0]}], 
@@ -5069,7 +5010,6 @@ IOK0I7cU9ZcbMxnk/6T6ZKnw/pxQMDj4sMLeFd8L029KBka934p2nJ/08m0M
                    RowBox[{"PointSize", "[", "0.009166666666666668`", "]"}], 
                    ",", 
                    RowBox[{"AbsoluteThickness", "[", "2", "]"}], ",", 
-                   
                    TemplateBox[<|"color" -> RGBColor[0.2, 0.6, 0.6]|>, 
                     "RGBColorSwatchTemplate"], ",", 
                    RowBox[{"Thickness", "[", "0.003`", "]"}], ",", 
@@ -5112,9 +5052,10 @@ IOK0I7cU9ZcbMxnk/6T6ZKnw/pxQMDj4sMLeFd8L029KBka934p2nJ/08m0M
          RowBox[{#2, ",", "Above"}], "]"}]}], "]"}]& )]], "Output",
  CellChangeTimes->{3.974407699505081*^9, 3.974408114863912*^9, 
   3.974408275563895*^9, 3.974408408630665*^9, 3.974417412140765*^9, 
-  3.974417533438492*^9, 3.974418236500621*^9},
+  3.974417533438492*^9, 3.974418236500621*^9, 3.97447662124555*^9, 
+  3.974478059694283*^9},
  CellLabel->
-  "Out[228]=",ExpressionUUID->"58f85083-512e-4cd1-8fbb-7baa29fadc6f"]
+  "Out[544]=",ExpressionUUID->"3e92db0b-1c09-4807-9af1-2ea6fcb248cd"]
 }, Open  ]]
 }, Open  ]],
 
@@ -5149,13 +5090,13 @@ Cell[BoxData[
   RowBox[{
    RowBox[{
     RowBox[{"allData", "=", 
-     RowBox[{"Normal", "[", "combinedData", "]"}]}], ";"}], "\n", 
-   "\[IndentingNewLine]", 
+     RowBox[{"Normal", "[", "combinedData", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Parameters", "-", 
      RowBox[{
      "Force", " ", "String", " ", "conversion", " ", "for", " ", "safe", " ", 
-      "matching"}]}], "*)"}], "\[IndentingNewLine]", 
+      "matching"}]}], "*)"}], "\n", 
    RowBox[{
     RowBox[{"targetZipStr", "=", 
      RowBox[{"ToString", "[", "95605", "]"}]}], ";"}], "\n", 
@@ -5164,14 +5105,14 @@ Cell[BoxData[
      RowBox[{"ToString", "/@", 
       RowBox[{"{", 
        RowBox[{"95573", ",", "95542", ",", "95616", ",", "95695"}], "}"}]}]}],
-     ";"}], "\n", "\[IndentingNewLine]", 
+     ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{
       RowBox[{"--", 
        RowBox[{"-", "Data"}]}], " ", "Center", " ", "Series", " ", 
       RowBox[{
-       RowBox[{"(", "95605", ")"}], "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"(", "95605", ")"}], "--"}]}], "-"}], "*)"}], "\n", 
    RowBox[{
     RowBox[{"dcRows", "=", 
      RowBox[{"Select", "[", 
@@ -5195,11 +5136,11 @@ Cell[BoxData[
          RowBox[{"#", "[", 
           RowBox[{"[", 
            RowBox[{"All", ",", "\"\<TOTALKWH\>\""}], "]"}], "]"}], "]"}], 
-        "&"}]}], "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+        "&"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Convert", " ", "to", " ", 
      RowBox[{"{", 
-      RowBox[{"Date", ",", "Value"}], "}"}], " ", "pairs"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"Date", ",", "Value"}], "}"}], " ", "pairs"}], "*)"}], "\n", 
    RowBox[{
     RowBox[{"dcSeriesData", "=", 
      RowBox[{"KeyValueMap", "[", 
@@ -5218,14 +5159,14 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"dcSeriesData", "=", 
      RowBox[{"SortBy", "[", 
-      RowBox[{"dcSeriesData", ",", "First"}], "]"}]}], ";"}], "\n", 
-   "\[IndentingNewLine]", 
+      RowBox[{"dcSeriesData", ",", "First"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{
       RowBox[{"--", 
        RowBox[{"-", "Comparison"}]}], " ", "Average", " ", 
-      RowBox[{"Series", "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"Series", "--"}]}], "-"}], "*)"}], "\n", 
    RowBox[{
     RowBox[{"compRows", "=", 
      RowBox[{"Select", "[", 
@@ -5279,11 +5220,11 @@ Cell[BoxData[
          RowBox[{"#", "[", 
           RowBox[{"[", 
            RowBox[{"All", ",", "3"}], "]"}], "]"}], "]"}], "&"}]}], "]"}]}], 
-    ";"}], "\n", "\[IndentingNewLine]", 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Convert", " ", "to", " ", 
      RowBox[{"{", 
-      RowBox[{"Date", ",", "Value"}], "}"}], " ", "pairs"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"Date", ",", "Value"}], "}"}], " ", "pairs"}], "*)"}], "\n", 
    RowBox[{
     RowBox[{"compSeriesData", "=", 
      RowBox[{"KeyValueMap", "[", 
@@ -5321,12 +5262,12 @@ Cell[BoxData[
      RowBox[{
      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
        "===", "===", "===", "===", "===", "===", "===", "==="}], "="}], 
-    "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    "*)"}], "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{
       RowBox[{"1.", " ", "Define", " ", "Eras", " ", "for", " ", "Shading"}], 
-      "&"}], " ", "Legend"}], "*)"}], "\n", 
+      "&"}], " ", "Legend"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"eraColors", "=", 
      RowBox[{"<|", 
@@ -5340,7 +5281,7 @@ Cell[BoxData[
        RowBox[{"\"\<Multi-modal AI\>\"", "->", 
         RowBox[{"RGBColor", "[", 
          RowBox[{"0.5", ",", "0", ",", "0.5", ",", "0.15"}], "]"}]}]}], 
-      "|>"}]}], ";"}], "\[IndentingNewLine]", "\n", 
+      "|>"}]}], ";"}], "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Create", " ", "Shading", " ", "Rectangles"}], "*)"}], 
    "\[IndentingNewLine]", 
@@ -5409,7 +5350,7 @@ Cell[BoxData[
               RowBox[{"{", 
                RowBox[{"2025", ",", "12", ",", "1"}], "}"}], "]"}], ",", 
              RowBox[{"Scaled", "[", "1", "]"}]}], "}"}]}], "]"}]}], "}"}]}], 
-      "}"}]}], ";"}], "\[IndentingNewLine]", "\n", 
+      "}"}]}], ";"}], "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"2.", " ", "Define", " ", "Peak", " ", "Milestones", " ", 
      RowBox[{"(", 
@@ -5446,8 +5387,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"{", 
          RowBox[{"2025", ",", "1"}], "}"}], 
-        "->", "\"\<Jan 2025\\nMassive\\nSpike\>\""}]}], "|>"}]}], ";"}], 
-   "\[IndentingNewLine]", "\n", 
+        "->", "\"\<Jan 2025\\nMassive\\nSpike\>\""}]}], "|>"}]}], ";"}], "\n",
+    "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
     "Create", " ", "Framed", " ", "Text", " ", "Labels", " ", "on", " ", 
@@ -5527,14 +5468,13 @@ Cell[BoxData[
        "===", "===", "===", "===", "===", "===", "===", "==="}], "="}], 
     "*)"}], "\[IndentingNewLine]", 
    RowBox[{"(*", 
-    RowBox[{"3.", " ", "GENERATE", " ", "PLOT"}], "*)"}], 
-   "\[IndentingNewLine]", 
+    RowBox[{"3.", " ", "GENERATE", " ", "PLOT"}], "*)"}], "\n", 
    RowBox[{"(*", " ", 
     RowBox[{
      RowBox[{
      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
        "===", "===", "===", "===", "===", "===", "===", "==="}], "="}], 
-    "*)"}], "\n", "\[IndentingNewLine]", 
+    "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"DateListPlot", "[", 
     RowBox[{
      RowBox[{"{", 
@@ -7483,38 +7423,30 @@ Cell[191536, 3809, 735, 19, 90, "Input",ExpressionUUID->"bb2c6f81-e0d9-4098-9e9e
 Cell[CellGroupData[{
 Cell[192308, 3833, 227, 4, 66, "Section",ExpressionUUID->"ae8f7394-6a22-475b-8104-08b411e9d29d"],
 Cell[CellGroupData[{
-Cell[192560, 3841, 16394, 427, 1316, "Input",ExpressionUUID->"5ce00b6d-3fcd-4145-aaf1-24fc317ccf6d"],
-Cell[208957, 4270, 596, 13, 26, "Message",ExpressionUUID->"a65cacf1-fdbb-466a-9358-883b930567f6"],
-Cell[209556, 4285, 593, 13, 26, "Message",ExpressionUUID->"e6a43e14-0775-4c67-9ca6-8f5840305a0c"],
-Cell[210152, 4300, 595, 13, 26, "Message",ExpressionUUID->"fb6747d6-fabc-4875-9b46-053f07271c07"],
+Cell[192560, 3841, 16950, 438, 1316, "Input",ExpressionUUID->"5ce00b6d-3fcd-4145-aaf1-24fc317ccf6d"],
 Cell[CellGroupData[{
-Cell[210772, 4317, 553, 11, 23, "Print",ExpressionUUID->"7254ff70-5060-4972-8a65-80f7b596362d"],
-Cell[211328, 4330, 536, 12, 23, "Print",ExpressionUUID->"a4305028-26b9-40ef-a5ad-81d15240db4e"]
+Cell[209535, 4283, 597, 11, 23, "Print",ExpressionUUID->"d0c8b57d-a481-4728-bd44-17b66ef96355"],
+Cell[210135, 4296, 580, 12, 23, "Print",ExpressionUUID->"abc419f8-e13d-446e-8040-780cb05a4c44"]
 }, Open  ]],
-Cell[211879, 4345, 596, 13, 26, "Message",ExpressionUUID->"cace2736-c512-4982-a0af-1f4dbf2126c2"],
-Cell[212478, 4360, 596, 13, 26, "Message",ExpressionUUID->"0ee393a1-81a4-48a1-abfb-9d33c9485ebd"],
-Cell[213077, 4375, 594, 13, 26, "Message",ExpressionUUID->"aa6208a9-bb30-45d7-b95a-d90844041e0b"],
-Cell[213674, 4390, 34432, 726, 715, "Output",ExpressionUUID->"58f85083-512e-4cd1-8fbb-7baa29fadc6f"]
+Cell[210730, 4311, 34879, 746, 715, "Output",ExpressionUUID->"3e92db0b-1c09-4807-9af1-2ea6fcb248cd"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[248155, 5122, 165, 3, 66, "Section",ExpressionUUID->"350f563c-4e23-467d-9392-082f4fb771d1"],
+Cell[245658, 5063, 165, 3, 66, "Section",ExpressionUUID->"350f563c-4e23-467d-9392-082f4fb771d1"],
 Cell[CellGroupData[{
-Cell[248345, 5129, 19238, 500, 1295, "Input",ExpressionUUID->"984778a6-acd6-41d8-944d-883626f260db"],
-Cell[267586, 5631, 33435, 708, 70, "Output",ExpressionUUID->"0ee99071-166f-4aa5-bd48-9c0e8e09eb6d"]
+Cell[245848, 5070, 19234, 499, 1295, "Input",ExpressionUUID->"984778a6-acd6-41d8-944d-883626f260db"],
+Cell[265085, 5571, 33435, 708, 372, "Output",ExpressionUUID->"0ee99071-166f-4aa5-bd48-9c0e8e09eb6d"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[301070, 6345, 165, 3, 70, "Section",ExpressionUUID->"03257d0f-1835-40f7-b667-cbc8ed3c4de6"],
+Cell[298569, 6285, 165, 3, 66, "Section",ExpressionUUID->"03257d0f-1835-40f7-b667-cbc8ed3c4de6"],
 Cell[CellGroupData[{
-Cell[301260, 6352, 16145, 426, 70, "Input",ExpressionUUID->"37cb5db1-0c09-4c77-987c-418fb33127d0"],
-Cell[317408, 6780, 30246, 657, 70, "Output",ExpressionUUID->"a532eda5-b30e-4ff0-830e-ac9218817099"]
+Cell[298759, 6292, 16145, 426, 968, "Input",ExpressionUUID->"37cb5db1-0c09-4c77-987c-418fb33127d0"],
+Cell[314907, 6720, 30246, 657, 70, "Output",ExpressionUUID->"a532eda5-b30e-4ff0-830e-ac9218817099"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
